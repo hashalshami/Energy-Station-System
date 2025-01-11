@@ -16,5 +16,10 @@ namespace EnergySystem
         {
             InitializeComponent();
         }
+
+        private void EnergySystem_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

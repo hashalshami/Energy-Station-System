@@ -1,1 +1,10 @@
 D:\Energy Station System\EnergySystem\EnergySystem\bin\Debug\EnergySystem.exe.config
+D:\EnergySystem\EnergySystem\bin\Debug\EnergySystem.exe.config
+D:\EnergySystem\EnergySystem\bin\Debug\EnergySystem.exe
+D:\EnergySystem\EnergySystem\bin\Debug\EnergySystem.pdb
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.csprojResolveAssemblyReference.cache
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.EnergySystem.resources
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.Properties.Resources.resources
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.csproj.GenerateResource.Cache
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.exe
+D:\EnergySystem\EnergySystem\obj\Debug\EnergySystem.pdb
