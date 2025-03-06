@@ -36,6 +36,7 @@
             this.دليلتعرفةالاشتراكاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دليلنوعالاشتراكاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دليلالمشتركينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.دليلالمحصلينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             // 
             this.إدارةالنظامToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.دليلالعداداتالمركزيةToolStripMenuItem,
+            this.دليلالمحصلينToolStripMenuItem,
             this.دليلالمناطقToolStripMenuItem,
             this.دليلالمربعاتToolStripMenuItem,
             this.دليلتعرفةالاشتراكاتToolStripMenuItem,
@@ -99,6 +101,12 @@
             this.دليلالمشتركينToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.دليلالمشتركينToolStripMenuItem.Text = "دليل المشتركين";
             // 
+            // دليلالمحصلينToolStripMenuItem
+            // 
+            this.دليلالمحصلينToolStripMenuItem.Name = "دليلالمحصلينToolStripMenuItem";
+            this.دليلالمحصلينToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.دليلالمحصلينToolStripMenuItem.Text = "دليل المحصلين";
+            // 
             // EnergySystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +133,7 @@
         private System.Windows.Forms.ToolStripMenuItem دليلتعرفةالاشتراكاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem دليلنوعالاشتراكاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem دليلالمشتركينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem دليلالمحصلينToolStripMenuItem;
     }
 }
 
