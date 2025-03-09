@@ -29,21 +29,24 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.إدارةالنظامToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلالعداداتالمركزيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلالمناطقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلالمربعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلتعرفةالاشتراكاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلنوعالاشتراكاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SystemConfigMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Collectors_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CentralMeter_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Areas_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Blocks_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubscriptionFees_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Contracts_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Services_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Fines_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دليلالمشتركينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.دليلالمحصلينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.إدارةالنظامToolStripMenuItem,
+            this.EnergySystemMenuItem,
             this.دليلالمشتركينToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -52,60 +55,83 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // إدارةالنظامToolStripMenuItem
+            // EnergySystemMenuItem
             // 
-            this.إدارةالنظامToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.دليلالعداداتالمركزيةToolStripMenuItem,
-            this.دليلالمحصلينToolStripMenuItem,
-            this.دليلالمناطقToolStripMenuItem,
-            this.دليلالمربعاتToolStripMenuItem,
-            this.دليلتعرفةالاشتراكاتToolStripMenuItem,
-            this.دليلنوعالاشتراكاتToolStripMenuItem});
-            this.إدارةالنظامToolStripMenuItem.Name = "إدارةالنظامToolStripMenuItem";
-            this.إدارةالنظامToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.إدارةالنظامToolStripMenuItem.Text = "تهيئة النظام";
+            this.EnergySystemMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SystemConfigMenuItem});
+            this.EnergySystemMenuItem.Name = "EnergySystemMenuItem";
+            this.EnergySystemMenuItem.Size = new System.Drawing.Size(115, 20);
+            this.EnergySystemMenuItem.Text = "نظام محطة الكهرباء";
             // 
-            // دليلالعداداتالمركزيةToolStripMenuItem
+            // SystemConfigMenuItem
             // 
-            this.دليلالعداداتالمركزيةToolStripMenuItem.Name = "دليلالعداداتالمركزيةToolStripMenuItem";
-            this.دليلالعداداتالمركزيةToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلالعداداتالمركزيةToolStripMenuItem.Text = "دليل العدادات المركزية";
+            this.SystemConfigMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Collectors_MenuItem,
+            this.CentralMeter_MenuItem,
+            this.Areas_MenuItem,
+            this.Blocks_MenuItem,
+            this.SubscriptionFees_MenuItem,
+            this.Contracts_MenuItem,
+            this.Services_MenuItem,
+            this.Fines_MenuItem});
+            this.SystemConfigMenuItem.Name = "SystemConfigMenuItem";
+            this.SystemConfigMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SystemConfigMenuItem.Text = "تهيئة النظام";
             // 
-            // دليلالمناطقToolStripMenuItem
+            // Collectors_MenuItem
             // 
-            this.دليلالمناطقToolStripMenuItem.Name = "دليلالمناطقToolStripMenuItem";
-            this.دليلالمناطقToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلالمناطقToolStripMenuItem.Text = "دليل المناطق";
+            this.Collectors_MenuItem.Name = "Collectors_MenuItem";
+            this.Collectors_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Collectors_MenuItem.Text = "دليل المحصلين";
+            this.Collectors_MenuItem.Click += new System.EventHandler(this.Collectors_MenuItem_Click);
             // 
-            // دليلالمربعاتToolStripMenuItem
+            // CentralMeter_MenuItem
             // 
-            this.دليلالمربعاتToolStripMenuItem.Name = "دليلالمربعاتToolStripMenuItem";
-            this.دليلالمربعاتToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلالمربعاتToolStripMenuItem.Text = "دليل المربعات";
+            this.CentralMeter_MenuItem.Name = "CentralMeter_MenuItem";
+            this.CentralMeter_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.CentralMeter_MenuItem.Text = "دليل العدادات المركزية";
             // 
-            // دليلتعرفةالاشتراكاتToolStripMenuItem
+            // Areas_MenuItem
             // 
-            this.دليلتعرفةالاشتراكاتToolStripMenuItem.Name = "دليلتعرفةالاشتراكاتToolStripMenuItem";
-            this.دليلتعرفةالاشتراكاتToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلتعرفةالاشتراكاتToolStripMenuItem.Text = "دليل تعرفة الاشتراكات";
+            this.Areas_MenuItem.Name = "Areas_MenuItem";
+            this.Areas_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Areas_MenuItem.Text = "دليل المناطق";
             // 
-            // دليلنوعالاشتراكاتToolStripMenuItem
+            // Blocks_MenuItem
             // 
-            this.دليلنوعالاشتراكاتToolStripMenuItem.Name = "دليلنوعالاشتراكاتToolStripMenuItem";
-            this.دليلنوعالاشتراكاتToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلنوعالاشتراكاتToolStripMenuItem.Text = "دليل نوع الاشتراكات";
+            this.Blocks_MenuItem.Name = "Blocks_MenuItem";
+            this.Blocks_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Blocks_MenuItem.Text = "دليل المربعات";
+            // 
+            // SubscriptionFees_MenuItem
+            // 
+            this.SubscriptionFees_MenuItem.Name = "SubscriptionFees_MenuItem";
+            this.SubscriptionFees_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.SubscriptionFees_MenuItem.Text = "دليل تعرفة الاشتراكات";
+            // 
+            // Contracts_MenuItem
+            // 
+            this.Contracts_MenuItem.Name = "Contracts_MenuItem";
+            this.Contracts_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Contracts_MenuItem.Text = "دليل نماذج العقود";
+            // 
+            // Services_MenuItem
+            // 
+            this.Services_MenuItem.Name = "Services_MenuItem";
+            this.Services_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Services_MenuItem.Text = "دليل الخدمات";
+            // 
+            // Fines_MenuItem
+            // 
+            this.Fines_MenuItem.Name = "Fines_MenuItem";
+            this.Fines_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Fines_MenuItem.Text = "دليل الغرامات";
             // 
             // دليلالمشتركينToolStripMenuItem
             // 
             this.دليلالمشتركينToolStripMenuItem.Name = "دليلالمشتركينToolStripMenuItem";
             this.دليلالمشتركينToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
             this.دليلالمشتركينToolStripMenuItem.Text = "دليل المشتركين";
-            // 
-            // دليلالمحصلينToolStripMenuItem
-            // 
-            this.دليلالمحصلينToolStripMenuItem.Name = "دليلالمحصلينToolStripMenuItem";
-            this.دليلالمحصلينToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.دليلالمحصلينToolStripMenuItem.Text = "دليل المحصلين";
             // 
             // EnergySystem
             // 
@@ -125,15 +151,18 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem إدارةالنظامToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلالعداداتالمركزيةToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلالمناطقToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلالمربعاتToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلتعرفةالاشتراكاتToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلنوعالاشتراكاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EnergySystemMenuItem;
         private System.Windows.Forms.ToolStripMenuItem دليلالمشتركينToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem دليلالمحصلينToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SystemConfigMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Collectors_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CentralMeter_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Areas_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Blocks_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SubscriptionFees_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Contracts_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Services_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Fines_MenuItem;
+        public System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
 

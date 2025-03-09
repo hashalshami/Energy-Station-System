@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +60,12 @@
     <Compile Include="reportViewer.Designer.cs">
       <DependentUpon>reportViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfig\Collectors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfig\Collectors.Designer.cs">
+      <DependentUpon>Collectors.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SystemConfig\Collectors.resx">
+      <DependentUpon>Collectors.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
