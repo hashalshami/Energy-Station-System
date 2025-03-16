@@ -1,0 +1,11 @@
+D:\EnergyStationSystem\EnergyStationSystem\bin\Debug\EnergyStationSystem.exe.config
+D:\EnergyStationSystem\EnergyStationSystem\bin\Debug\EnergyStationSystem.exe
+D:\EnergyStationSystem\EnergyStationSystem\bin\Debug\EnergyStationSystem.pdb
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.csprojResolveAssemblyReference.cache
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.Form1.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.MainForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.Properties.Resources.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.CollectorsForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.csproj.GenerateResource.Cache
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.exe
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.pdb
