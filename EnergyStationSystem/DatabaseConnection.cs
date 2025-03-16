@@ -10,7 +10,7 @@ namespace EnergyStationSystem
 {
     class DatabaseConnection
     {
-        public string connectionString = "Data Source=HASH;Initial Catalog=Energy_DB;Integrated Security=True";
+        public string connectionString = "Data Source=HASH;Initial Catalog=EnergyStation_Database;Integrated Security=True";
 
         public bool TestConnection()
         {

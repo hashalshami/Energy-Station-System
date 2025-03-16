@@ -36,5 +36,15 @@ namespace EnergyStationSystem
         {
             OpenChildForm(new CollectorsForm(), "دليل المحصلين");
         }
+
+        private void Collectors_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new CollectorsForm(), "دليل المحصلين");
+        }
+
+        private void Areas_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new AreasForm(), "دليل المناطق");
+        }
     }
 }

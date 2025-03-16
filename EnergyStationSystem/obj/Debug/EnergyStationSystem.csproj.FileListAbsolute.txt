@@ -9,3 +9,4 @@ D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemC
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.csproj.GenerateResource.Cache
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.exe
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.pdb
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.AreasForm.resources

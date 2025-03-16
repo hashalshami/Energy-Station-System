@@ -180,6 +180,7 @@
             this.Areas_MenuItem.Name = "Areas_MenuItem";
             this.Areas_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Areas_MenuItem.Text = "دليل المناطق";
+            this.Areas_MenuItem.Click += new System.EventHandler(this.Areas_MenuItem_Click);
             // 
             // CentralMeter_MenuItem
             // 
@@ -192,6 +193,7 @@
             this.Collectors_MenuItem.Name = "Collectors_MenuItem";
             this.Collectors_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Collectors_MenuItem.Text = "دليل المحصلين";
+            this.Collectors_MenuItem.Click += new System.EventHandler(this.Collectors_MenuItem_Click);
             // 
             // SystemConfigMenuItem
             // 
@@ -205,7 +207,7 @@
             this.Services_MenuItem,
             this.Fines_MenuItem});
             this.SystemConfigMenuItem.Name = "SystemConfigMenuItem";
-            this.SystemConfigMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.SystemConfigMenuItem.Size = new System.Drawing.Size(152, 22);
             this.SystemConfigMenuItem.Text = "تهيئة النظام";
             // 
             // SubscriptionFees_MenuItem

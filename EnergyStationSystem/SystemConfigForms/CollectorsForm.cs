@@ -37,6 +37,7 @@ namespace EnergyStationSystem.SystemConfigForms
                     BindingSource bs = new BindingSource();
                     bs.DataSource = dt;
                     dataGridView1.DataSource = bs;
+
                 }
             }
             catch (Exception ex)
@@ -76,7 +77,7 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO collectors (name, phone, address, note) VALUES (@name, @phone, @address, @note)";
+                    string query = "INSERT INTO Collectors (name, phone, address, note) VALUES (@name, @phone, @address, @note)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
@@ -125,7 +126,7 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE collectors SET name = @name, phone = @phone, address = @address, note = @note WHERE id = @id";
+                    string query = "UPDATE Collectors SET name = @name, phone = @phone, address = @address, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -175,7 +176,7 @@ namespace EnergyStationSystem.SystemConfigForms
                     using (SqlConnection conn = new SqlConnection(db.connectionString))
                     {
                         conn.Open();
-                        string query = "DELETE FROM collectors WHERE id = @id";
+                        string query = "DELETE FROM Collectors WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -223,6 +224,18 @@ namespace EnergyStationSystem.SystemConfigForms
                 txtPhone.Text = row.Cells["colPhone"].Value.ToString();
                 txtAddress.Text = row.Cells["colAddress"].Value.ToString();
                 txtNote.Text = row.Cells["colNote"].Value.ToString();
+            }
+        }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke; // لون للسطر الزوجي
+            }
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro; // لون للسطر الفردي
             }
         }
 
