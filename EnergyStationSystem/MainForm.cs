@@ -34,7 +34,7 @@ namespace EnergyStationSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new CollectorsForm(), "دليل المحصلين");
+            OpenChildForm(new BlocksForm(), "دليل المربعات");
         }
 
         private void Collectors_MenuItem_Click(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace EnergyStationSystem
         private void Areas_MenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new AreasForm(), "دليل المناطق");
+        }
+
+        private void Blocks_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new BlocksForm(), "دليل المربعات");
         }
     }
 }

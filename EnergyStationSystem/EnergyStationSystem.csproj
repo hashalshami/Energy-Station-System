@@ -65,6 +65,12 @@
     <Compile Include="SystemConfigForms\AreasForm.Designer.cs">
       <DependentUpon>AreasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfigForms\BlocksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\BlocksForm.Designer.cs">
+      <DependentUpon>BlocksForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemConfigForms\CollectorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="SystemConfigForms\AreasForm.resx">
       <DependentUpon>AreasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\BlocksForm.resx">
+      <DependentUpon>BlocksForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\CollectorsForm.resx">
       <DependentUpon>CollectorsForm.cs</DependentUpon>

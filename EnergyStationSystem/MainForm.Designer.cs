@@ -174,6 +174,7 @@
             this.Blocks_MenuItem.Name = "Blocks_MenuItem";
             this.Blocks_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Blocks_MenuItem.Text = "دليل المربعات";
+            this.Blocks_MenuItem.Click += new System.EventHandler(this.Blocks_MenuItem_Click);
             // 
             // Areas_MenuItem
             // 
