@@ -18,30 +18,60 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void ClearFields()
         {
+            editBtn.Enabled = false;
+            deleteBtn.Enabled = false;
+            addBtn.Enabled = true;
             txtNumber.Text = "";
             txtName.Text = "";
-            areaBox.SelectedText ;
+            comboRegions.SelectedIndex = -1;
+            comboCollectors.SelectedIndex = -1;
         }
 
         private void LoadData()
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                using (SqlConnection con = new SqlConnection(db.connectionString))
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Areas", conn);
+                    con.Open();
+                    string queryCollectors = "SELECT id, name FROM Collectors";
+                    SqlDataAdapter daCollectors = new SqlDataAdapter(queryCollectors, con);
+                    DataTable dtCollectors = new DataTable();
+                    daCollectors.Fill(dtCollectors);
+
+                    comboCollectors.DataSource = dtCollectors;
+                    comboCollectors.DisplayMember = "name";
+                    comboCollectors.ValueMember = "id";
+                    comboCollectors.SelectedIndex = -1;
+
+                    string queryRegions = "SELECT id, name FROM Regions";
+                    SqlDataAdapter daRegions = new SqlDataAdapter(queryRegions, con);
+                    DataTable dtRegions = new DataTable();
+                    daRegions.Fill(dtRegions);
+
+                    comboRegions.DataSource = dtRegions;
+                    comboRegions.DisplayMember = "name";
+                    comboRegions.ValueMember = "id";
+                    comboRegions.SelectedIndex = -1;
+                    ////////////
+
+                    string GridQuery = @"SELECT Blocks.id, Blocks.name AS 'BlockName', 
+                                    Regions.name AS 'RegionName', Collectors.name AS 'CollectorName', Blocks.date AS 'date' 
+                                    FROM Blocks
+                                    JOIN Regions ON Blocks.region_id = Regions.id
+                                    JOIN Collectors ON Blocks.collector_id = Collectors.id";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(GridQuery, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    dataGridView1.DataSource = bs;
-
+                    dataGridView1.DataSource = dt;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+                MessageBox.Show("خطأ عند تحميل البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         public BlocksForm()
@@ -51,7 +81,180 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void BlocksForm_Load(object sender, EventArgs e)
         {
+            LoadData();
+            ClearFields();
+        }
 
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Blocks (name, region_id, collector_id, date) VALUES (@name, @region_id, @collector_id, @date)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@region_id", comboRegions.SelectedValue);
+                        cmd.Parameters.AddWithValue("@collector_id", comboCollectors.SelectedValue);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("تمت إضافة البيانات بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields(); // تفريغ الحقول بعد الإدخال
+                            LoadData();    // تحديث الداتا جريد
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم إضافة البيانات!", "فشل", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند إضافة البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtName.Text) || comboRegions.SelectedIndex == -1 || comboCollectors.SelectedIndex == -1)
+            {
+                MessageBox.Show("يرجى تحديد بيانات صحيحة قبل التعديل!", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    conn.Open();
+                    string query = "UPDATE Blocks SET name=@name, region_id=@region_id, collector_id=@collector_id, date=@date WHERE id=@id";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", txtNumber.Text);
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@region_id", comboRegions.SelectedValue);
+                        cmd.Parameters.AddWithValue("@collector_id", comboCollectors.SelectedValue);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("تم تعديل بيانات المربع بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
+                            LoadData(); // تحديث بيانات الجدول
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم تعديل البيانات!", "فشل", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند تعديل البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNumber.Text))
+            {
+                MessageBox.Show("يرجى تحديد السجل المراد حذفه!", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("هل أنت متأكد من حذف هذا المربع؟", "تأكيد حذف المربع", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(db.connectionString))
+                    {
+                        conn.Open();
+                        string query = "DELETE FROM Blocks WHERE id=@id";
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@id", txtNumber.Text);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("تم حذف المربع بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearFields();
+                                LoadData();
+                            }
+                            else
+                            {
+                                MessageBox.Show("لم يتم العثور على المربع!", "فشل", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("حدث خطأ عند حذف البيانات: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+            LoadData();
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            editBtn.Enabled = true;
+            deleteBtn.Enabled = true;
+            addBtn.Enabled = false;
+
+
+            if (e.RowIndex >= 0) // التأكد من أن النقر تم على صف وليس على الهيدر
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+                txtNumber.Text = row.Cells["colID"].Value.ToString();
+                txtName.Text = row.Cells["colName"].Value.ToString();
+                comboRegions.SelectedIndex = comboRegions.FindString(row.Cells["colRegion"].Value.ToString());
+                comboCollectors.SelectedIndex = comboCollectors.FindString(row.Cells["colCollector"].Value.ToString());
+            }
+        }
+
+        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            if (e.RowIndex % 2 == 0)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke; // لون للسطر الزوجي
+            }
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro; // لون للسطر الفردي
+            }
         }
     }
 }

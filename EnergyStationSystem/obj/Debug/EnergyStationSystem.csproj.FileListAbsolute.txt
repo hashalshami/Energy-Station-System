@@ -11,3 +11,4 @@ D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.exe
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.pdb
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.AreasForm.resources
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.BlocksForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.RegionsForm.resources

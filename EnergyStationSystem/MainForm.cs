@@ -44,7 +44,7 @@ namespace EnergyStationSystem
 
         private void Areas_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new AreasForm(), "دليل المناطق");
+            OpenChildForm(new RegionsForm(), "دليل المناطق");
         }
 
         private void Blocks_MenuItem_Click(object sender, EventArgs e)
