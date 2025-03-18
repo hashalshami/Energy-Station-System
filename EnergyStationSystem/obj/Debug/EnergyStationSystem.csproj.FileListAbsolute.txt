@@ -9,6 +9,9 @@ D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemC
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.csproj.GenerateResource.Cache
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.exe
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.pdb
-D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.AreasForm.resources
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.BlocksForm.resources
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.RegionsForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.ServicesForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.CentralMetersForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.ContractsForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.FinesForm.resources

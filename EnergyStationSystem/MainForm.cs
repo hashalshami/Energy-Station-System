@@ -42,14 +42,46 @@ namespace EnergyStationSystem
             OpenChildForm(new CollectorsForm(), "دليل المحصلين");
         }
 
-        private void Areas_MenuItem_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new RegionsForm(), "دليل المناطق");
-        }
-
         private void Blocks_MenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new BlocksForm(), "دليل المربعات");
         }
+
+        private void titleBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Regions_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new RegionsForm(), "دليل المناطق");
+        }
+
+        private void CentralMeter_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new CentralMetersForm(), "دليل العدادات المركزية");
+        }
+
+        private void SubscriptionFees_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SubscriptionRatesForm(), "دليل تعرفة الاشتراكات ");
+        }
+
+        private void Contracts_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ContractsForm(), "دليل نماذج العقود ");
+        }
+
+        private void Services_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ServicesForm(), "دليل الخدمات ");
+        }
+
+        private void Fines_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FinesForm(), "دليل الغرامات ");
+        }
+
+       
     }
 }

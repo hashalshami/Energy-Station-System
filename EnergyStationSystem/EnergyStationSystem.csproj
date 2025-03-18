@@ -59,17 +59,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemConfigForms\AreasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SystemConfigForms\AreasForm.Designer.cs">
-      <DependentUpon>AreasForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SystemConfigForms\BlocksForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SystemConfigForms\BlocksForm.Designer.cs">
       <DependentUpon>BlocksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigForms\CentralMetersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\CentralMetersForm.Designer.cs">
+      <DependentUpon>CentralMetersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemConfigForms\CollectorsForm.cs">
       <SubType>Form</SubType>
@@ -77,11 +77,35 @@
     <Compile Include="SystemConfigForms\CollectorsForm.Designer.cs">
       <DependentUpon>CollectorsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfigForms\ContractsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\ContractsForm.Designer.cs">
+      <DependentUpon>ContractsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigForms\FinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\FinesForm.Designer.cs">
+      <DependentUpon>FinesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemConfigForms\RegionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SystemConfigForms\RegionsForm.Designer.cs">
       <DependentUpon>RegionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigForms\ServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\ServicesForm.Designer.cs">
+      <DependentUpon>ServicesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfigForms\SubscriptionRatesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\SubscriptionRatesForm.Designer.cs">
+      <DependentUpon>SubscriptionRatesForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -98,17 +122,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SystemConfigForms\AreasForm.resx">
-      <DependentUpon>AreasForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\BlocksForm.resx">
       <DependentUpon>BlocksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\CentralMetersForm.resx">
+      <DependentUpon>CentralMetersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\CollectorsForm.resx">
       <DependentUpon>CollectorsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\ContractsForm.resx">
+      <DependentUpon>ContractsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\FinesForm.resx">
+      <DependentUpon>FinesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\RegionsForm.resx">
       <DependentUpon>RegionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\ServicesForm.resx">
+      <DependentUpon>ServicesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -41,13 +41,13 @@
             this.Services_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Contracts_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Blocks_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Areas_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CentralMeter_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Collectors_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SystemConfigMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SystemConfig_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SubscriptionFees_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Regions_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,6 +123,7 @@
             this.titleBtn.TabStop = false;
             this.titleBtn.Text = "دليل محطة الكهرباء";
             this.titleBtn.UseVisualStyleBackColor = false;
+            this.titleBtn.Click += new System.EventHandler(this.titleBtn_Click);
             // 
             // pictureBox2
             // 
@@ -156,18 +157,21 @@
             this.Fines_MenuItem.Name = "Fines_MenuItem";
             this.Fines_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Fines_MenuItem.Text = "دليل الغرامات";
+            this.Fines_MenuItem.Click += new System.EventHandler(this.Fines_MenuItem_Click);
             // 
             // Services_MenuItem
             // 
             this.Services_MenuItem.Name = "Services_MenuItem";
             this.Services_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Services_MenuItem.Text = "دليل الخدمات";
+            this.Services_MenuItem.Click += new System.EventHandler(this.Services_MenuItem_Click);
             // 
             // Contracts_MenuItem
             // 
             this.Contracts_MenuItem.Name = "Contracts_MenuItem";
             this.Contracts_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.Contracts_MenuItem.Text = "دليل نماذج العقود";
+            this.Contracts_MenuItem.Click += new System.EventHandler(this.Contracts_MenuItem_Click);
             // 
             // Blocks_MenuItem
             // 
@@ -176,18 +180,12 @@
             this.Blocks_MenuItem.Text = "دليل المربعات";
             this.Blocks_MenuItem.Click += new System.EventHandler(this.Blocks_MenuItem_Click);
             // 
-            // Areas_MenuItem
-            // 
-            this.Areas_MenuItem.Name = "Areas_MenuItem";
-            this.Areas_MenuItem.Size = new System.Drawing.Size(185, 22);
-            this.Areas_MenuItem.Text = "دليل المناطق";
-            this.Areas_MenuItem.Click += new System.EventHandler(this.Areas_MenuItem_Click);
-            // 
             // CentralMeter_MenuItem
             // 
             this.CentralMeter_MenuItem.Name = "CentralMeter_MenuItem";
             this.CentralMeter_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.CentralMeter_MenuItem.Text = "دليل العدادات المركزية";
+            this.CentralMeter_MenuItem.Click += new System.EventHandler(this.CentralMeter_MenuItem_Click);
             // 
             // Collectors_MenuItem
             // 
@@ -196,31 +194,32 @@
             this.Collectors_MenuItem.Text = "دليل المحصلين";
             this.Collectors_MenuItem.Click += new System.EventHandler(this.Collectors_MenuItem_Click);
             // 
-            // SystemConfigMenuItem
+            // SystemConfig_MenuItem
             // 
-            this.SystemConfigMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SystemConfig_MenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Collectors_MenuItem,
             this.CentralMeter_MenuItem,
-            this.Areas_MenuItem,
+            this.Regions_MenuItem,
             this.Blocks_MenuItem,
             this.SubscriptionFees_MenuItem,
             this.Contracts_MenuItem,
             this.Services_MenuItem,
             this.Fines_MenuItem});
-            this.SystemConfigMenuItem.Name = "SystemConfigMenuItem";
-            this.SystemConfigMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SystemConfigMenuItem.Text = "تهيئة النظام";
+            this.SystemConfig_MenuItem.Name = "SystemConfig_MenuItem";
+            this.SystemConfig_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SystemConfig_MenuItem.Text = "تهيئة النظام";
             // 
             // SubscriptionFees_MenuItem
             // 
             this.SubscriptionFees_MenuItem.Name = "SubscriptionFees_MenuItem";
             this.SubscriptionFees_MenuItem.Size = new System.Drawing.Size(185, 22);
             this.SubscriptionFees_MenuItem.Text = "دليل تعرفة الاشتراكات";
+            this.SubscriptionFees_MenuItem.Click += new System.EventHandler(this.SubscriptionFees_MenuItem_Click);
             // 
             // EnergySystemMenuItem
             // 
             this.EnergySystemMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SystemConfigMenuItem});
+            this.SystemConfig_MenuItem});
             this.EnergySystemMenuItem.Name = "EnergySystemMenuItem";
             this.EnergySystemMenuItem.Size = new System.Drawing.Size(115, 20);
             this.EnergySystemMenuItem.Text = "نظام محطة الكهرباء";
@@ -238,6 +237,13 @@
             this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // Regions_MenuItem
+            // 
+            this.Regions_MenuItem.Name = "Regions_MenuItem";
+            this.Regions_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Regions_MenuItem.Text = "دليل المناطق";
+            this.Regions_MenuItem.Click += new System.EventHandler(this.Regions_MenuItem_Click);
             // 
             // MainForm
             // 
@@ -277,12 +283,12 @@
         private System.Windows.Forms.ToolStripMenuItem Services_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem Contracts_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem Blocks_MenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Areas_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem CentralMeter_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem Collectors_MenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SystemConfigMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SystemConfig_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem SubscriptionFees_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem EnergySystemMenuItem;
         public System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem Regions_MenuItem;
     }
 }
