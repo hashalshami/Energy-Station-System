@@ -44,10 +44,10 @@
             this.CentralMeter_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Collectors_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SystemConfig_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Regions_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SubscriptionFees_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.Regions_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -123,7 +123,6 @@
             this.titleBtn.TabStop = false;
             this.titleBtn.Text = "دليل محطة الكهرباء";
             this.titleBtn.UseVisualStyleBackColor = false;
-            this.titleBtn.Click += new System.EventHandler(this.titleBtn_Click);
             // 
             // pictureBox2
             // 
@@ -206,8 +205,15 @@
             this.Services_MenuItem,
             this.Fines_MenuItem});
             this.SystemConfig_MenuItem.Name = "SystemConfig_MenuItem";
-            this.SystemConfig_MenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SystemConfig_MenuItem.Size = new System.Drawing.Size(132, 22);
             this.SystemConfig_MenuItem.Text = "تهيئة النظام";
+            // 
+            // Regions_MenuItem
+            // 
+            this.Regions_MenuItem.Name = "Regions_MenuItem";
+            this.Regions_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.Regions_MenuItem.Text = "دليل المناطق";
+            this.Regions_MenuItem.Click += new System.EventHandler(this.Regions_MenuItem_Click);
             // 
             // SubscriptionFees_MenuItem
             // 
@@ -237,13 +243,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // Regions_MenuItem
-            // 
-            this.Regions_MenuItem.Name = "Regions_MenuItem";
-            this.Regions_MenuItem.Size = new System.Drawing.Size(185, 22);
-            this.Regions_MenuItem.Text = "دليل المناطق";
-            this.Regions_MenuItem.Click += new System.EventHandler(this.Regions_MenuItem_Click);
             // 
             // MainForm
             // 

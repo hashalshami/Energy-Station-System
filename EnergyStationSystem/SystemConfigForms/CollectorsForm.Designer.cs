@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -53,12 +59,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.editBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -113,7 +113,48 @@
             this.dataGridView1.Size = new System.Drawing.Size(1017, 262);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dataGridView1_RowPrePaint);
+            // 
+            // colId
+            // 
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colId.DataPropertyName = "id";
+            this.colId.HeaderText = "الرقم";
+            this.colId.Name = "colId";
+            this.colId.Width = 60;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "الاسم";
+            this.colName.Name = "colName";
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "phone";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = null;
+            this.colPhone.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPhone.HeaderText = "رقم التلفون";
+            this.colPhone.Name = "colPhone";
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "address";
+            this.colAddress.HeaderText = "العنوان";
+            this.colAddress.Name = "colAddress";
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "date";
+            this.colDate.HeaderText = "تاريخ الإدخال";
+            this.colDate.Name = "colDate";
+            // 
+            // colNote
+            // 
+            this.colNote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNote.DataPropertyName = "note";
+            this.colNote.HeaderText = "ملاحظات";
+            this.colNote.Name = "colNote";
             // 
             // label5
             // 
@@ -374,48 +415,6 @@
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.panel1.Size = new System.Drawing.Size(1017, 245);
             this.panel1.TabIndex = 6;
-            // 
-            // colId
-            // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colId.DataPropertyName = "id";
-            this.colId.HeaderText = "الرقم";
-            this.colId.Name = "colId";
-            this.colId.Width = 60;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "الاسم";
-            this.colName.Name = "colName";
-            // 
-            // colPhone
-            // 
-            this.colPhone.DataPropertyName = "phone";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPhone.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPhone.HeaderText = "رقم التلفون";
-            this.colPhone.Name = "colPhone";
-            // 
-            // colAddress
-            // 
-            this.colAddress.DataPropertyName = "address";
-            this.colAddress.HeaderText = "العنوان";
-            this.colAddress.Name = "colAddress";
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "date";
-            this.colDate.HeaderText = "تاريخ الإدخال";
-            this.colDate.Name = "colDate";
-            // 
-            // colNote
-            // 
-            this.colNote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNote.DataPropertyName = "note";
-            this.colNote.HeaderText = "ملاحظات";
-            this.colNote.Name = "colNote";
             // 
             // CollectorsForm
             // 

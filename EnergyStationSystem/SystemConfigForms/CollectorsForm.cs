@@ -50,6 +50,7 @@ namespace EnergyStationSystem.SystemConfigForms
         public CollectorsForm()
         {
             InitializeComponent();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void CollectorsForm_Load(object sender, EventArgs e)
@@ -227,17 +228,7 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
-        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            if (e.RowIndex % 2 == 0)
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke; // لون للسطر الزوجي
-            }
-            else
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro; // لون للسطر الفردي
-            }
-        }
+        
 
 
 

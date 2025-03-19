@@ -77,6 +77,7 @@ namespace EnergyStationSystem.SystemConfigForms
         public BlocksForm()
         {
             InitializeComponent();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void BlocksForm_Load(object sender, EventArgs e)
@@ -106,8 +107,8 @@ namespace EnergyStationSystem.SystemConfigForms
                         if (result > 0)
                         {
                             MessageBox.Show("تمت إضافة البيانات بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields(); // تفريغ الحقول بعد الإدخال
-                            LoadData();    // تحديث الداتا جريد
+                            ClearFields(); 
+                            LoadData();   
                         }
                         else
                         {
@@ -151,7 +152,7 @@ namespace EnergyStationSystem.SystemConfigForms
                         {
                             MessageBox.Show("تم تعديل بيانات المربع بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
-                            LoadData(); // تحديث بيانات الجدول
+                            LoadData(); 
                         }
                         else
                         {
@@ -234,7 +235,7 @@ namespace EnergyStationSystem.SystemConfigForms
             addBtn.Enabled = false;
 
 
-            if (e.RowIndex >= 0) // التأكد من أن النقر تم على صف وليس على الهيدر
+            if (e.RowIndex >= 0) 
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
 
@@ -245,16 +246,6 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
-        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            if (e.RowIndex % 2 == 0)
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke; // لون للسطر الزوجي
-            }
-            else
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro; // لون للسطر الفردي
-            }
-        }
+        
     }
 }

@@ -46,11 +46,13 @@ namespace EnergyStationSystem.SystemConfigForms
         public RegionsForm()
         {
             InitializeComponent();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void RegionsForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            ClearFields();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -210,16 +212,6 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
-        private void dataGridView1_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
-        {
-            if (e.RowIndex % 2 == 0)
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.WhiteSmoke; // لون للسطر الزوجي
-            }
-            else
-            {
-                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro; // لون للسطر الفردي
-            }
-        }
+       
     }
 }
