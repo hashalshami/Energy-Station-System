@@ -90,9 +90,10 @@ namespace EnergyStationSystem.SystemConfigForms
 
                         if (result > 0)
                         {
+                            LoadData();
                             MessageBox.Show("تمت إضافة البيانات بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
-                            LoadData();
+                            
                         }
                         else
                         {
