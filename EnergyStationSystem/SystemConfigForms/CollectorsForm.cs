@@ -50,12 +50,12 @@ namespace EnergyStationSystem.SystemConfigForms
         public CollectorsForm()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void CollectorsForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -66,8 +66,9 @@ namespace EnergyStationSystem.SystemConfigForms
                 return;
             }
 
-            long phoneNumber;
-            if (!long.TryParse(txtPhone.Text, out phoneNumber) || txtPhone.Text.Length != 9)
+            int phoneNumber;
+            //if (!long.TryParse(txtPhone.Text, out phoneNumber) || txtPhone.Text.Length != 9)
+            if (!int.TryParse(txtPhone.Text, out phoneNumber))
             {
                 MessageBox.Show("يرجى إدخال رقم هاتف صحيح !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;

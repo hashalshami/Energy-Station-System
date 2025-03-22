@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.printBtn = new System.Windows.Forms.Button();
@@ -52,11 +52,11 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -351,22 +351,20 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // colId
+            // colDate
             // 
-            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colId.DataPropertyName = "id";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colId.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colId.HeaderText = "الرقم";
-            this.colId.Name = "colId";
-            this.colId.Width = 60;
+            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colDate.DataPropertyName = "date";
+            this.colDate.HeaderText = "تاريخ الإدخال";
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 102;
             // 
-            // colName
+            // colDescription
             // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "الغرامة";
-            this.colName.Name = "colName";
-            this.colName.Width = 73;
+            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDescription.DataPropertyName = "description";
+            this.colDescription.HeaderText = "وصف الغرامة";
+            this.colDescription.Name = "colDescription";
             // 
             // colPrice
             // 
@@ -379,20 +377,22 @@
             this.colPrice.Name = "colPrice";
             this.colPrice.Width = 103;
             // 
-            // colDescription
+            // colName
             // 
-            this.colDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colDescription.DataPropertyName = "description";
-            this.colDescription.HeaderText = "وصف الغرامة";
-            this.colDescription.Name = "colDescription";
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "الغرامة";
+            this.colName.Name = "colName";
+            this.colName.Width = 73;
             // 
-            // colDate
+            // colId
             // 
-            this.colDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colDate.DataPropertyName = "date";
-            this.colDate.HeaderText = "تاريخ الإدخال";
-            this.colDate.Name = "colDate";
-            this.colDate.Width = 102;
+            this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colId.DataPropertyName = "id";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colId.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colId.HeaderText = "الرقم";
+            this.colId.Name = "colId";
+            this.colId.Width = 60;
             // 
             // FinesForm
             // 
@@ -432,11 +432,11 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
-        private System.Windows.Forms.TextBox txtPrice;
     }
 }

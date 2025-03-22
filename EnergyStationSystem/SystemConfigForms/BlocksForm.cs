@@ -57,8 +57,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
                     string GridQuery = @"SELECT Blocks.id, Blocks.name AS 'BlockName', 
                                     Regions.name AS 'RegionName', Collectors.name AS 'CollectorName', Blocks.date AS 'date' 
-                                    FROM Blocks
-                                    JOIN Regions ON Blocks.region_id = Regions.id
+                                    FROM Blocks JOIN Regions ON Blocks.region_id = Regions.id
                                     JOIN Collectors ON Blocks.collector_id = Collectors.id";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(GridQuery, con);
@@ -77,11 +76,11 @@ namespace EnergyStationSystem.SystemConfigForms
         public BlocksForm()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void BlocksForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
             LoadData();
             ClearFields();
         }

@@ -97,8 +97,8 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int areaId;
-            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out areaId))
+            int regionID;
+            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out regionID))
             {
                 MessageBox.Show("يرجى تحديد منطقة صحيحة او رقم منطقة صحيح  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -114,7 +114,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", areaId);
+                        cmd.Parameters.AddWithValue("@id", regionID);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 

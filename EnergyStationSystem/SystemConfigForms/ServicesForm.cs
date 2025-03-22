@@ -49,12 +49,12 @@ namespace EnergyStationSystem.SystemConfigForms
         public ServicesForm()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void ServicesForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -65,8 +65,8 @@ namespace EnergyStationSystem.SystemConfigForms
                 return;
             }
 
-            long price;
-            if (!long.TryParse(txtPrice.Text, out price))
+            int price;
+            if (!int.TryParse(txtPrice.Text, out price))
             {
                 MessageBox.Show("يرجى إدخال مبلغ صحيح !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -77,13 +77,12 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO Services (name, price, description, date) VALUES (@name, @price, @description, @date)";
+                    string query = "INSERT INTO Services (name, price, description) VALUES (@name, @price, @description)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
                         cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
 
                         int result = cmd.ExecuteNonQuery();
@@ -109,14 +108,14 @@ namespace EnergyStationSystem.SystemConfigForms
         private void editBtn_Click(object sender, EventArgs e)
         {
             int serviceID;
-            long price;
+            int price;
             if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out serviceID))
             {
                 MessageBox.Show("يرجى تحديد رقم صحيح للخدمة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!long.TryParse(txtPrice.Text, out  price))
+            if (!int.TryParse(txtPrice.Text, out  price))
             {
                 MessageBox.Show("يرجى إدخال مبلغ صحيح !!!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -211,6 +210,7 @@ namespace EnergyStationSystem.SystemConfigForms
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadData();
+            ClearFields();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
