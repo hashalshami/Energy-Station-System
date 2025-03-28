@@ -80,9 +80,9 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void BlocksForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
-            LoadData();
             ClearFields();
+            LoadData();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -92,14 +92,14 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO Blocks (name, region_id, collector_id, date) VALUES (@name, @region_id, @collector_id, @date)";
+                    string query = "INSERT INTO Blocks (name, region_id, collector_id) VALUES (@name, @region_id, @collector_id)";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@region_id", comboRegions.SelectedValue);
                         cmd.Parameters.AddWithValue("@collector_id", comboCollectors.SelectedValue);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                        //cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
                         int result = cmd.ExecuteNonQuery();
 
@@ -135,15 +135,14 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Blocks SET name=@name, region_id=@region_id, collector_id=@collector_id, date=@date WHERE id=@id";
+                    string query = "UPDATE Blocks SET name=@name, region_id=@region_id, collector_id=@collector_id WHERE id= '" + txtNumber.Text+"'";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", txtNumber.Text);
+                        //cmd.Parameters.AddWithValue("@id", txtNumber.Text);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@region_id", comboRegions.SelectedValue);
                         cmd.Parameters.AddWithValue("@collector_id", comboCollectors.SelectedValue);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
                         int result = cmd.ExecuteNonQuery();
 
@@ -182,11 +181,11 @@ namespace EnergyStationSystem.SystemConfigForms
                     using (SqlConnection conn = new SqlConnection(db.connectionString))
                     {
                         conn.Open();
-                        string query = "DELETE FROM Blocks WHERE id=@id";
+                        string query = "DELETE FROM Blocks WHERE id='" + txtNumber.Text+"'";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@id", txtNumber.Text);
+                            //cmd.Parameters.AddWithValue("@id", txtNumber.Text);
 
                             int rowsAffected = cmd.ExecuteNonQuery();
 

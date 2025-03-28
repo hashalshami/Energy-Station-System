@@ -11,7 +11,7 @@ namespace EnergyStationSystem
     class DatabaseConnection
     {
         public string connectionString = "Data Source=HASH;Initial Catalog=EnergyStation_Database;Integrated Security=True";
-
+        public string ReseedID = "DBCC CHECKIDENT ('Collectors', RESEED, 0)";
         public bool TestConnection()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
