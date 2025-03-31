@@ -17,12 +17,11 @@ namespace EnergyStationSystem.SystemConfigForms
         public CentralMetersForm()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void CentralMetersForm_Load(object sender, EventArgs e)
         {
-
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void addBtn_Click(object sender, EventArgs e)

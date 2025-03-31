@@ -1,0 +1,1 @@
+DBCC CHECKIDENT ('Collectors', RESEED, 0);

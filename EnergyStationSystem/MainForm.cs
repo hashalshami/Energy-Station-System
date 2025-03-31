@@ -34,7 +34,7 @@ namespace EnergyStationSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new FinesForm(), "دليل الغرامات ");
+            OpenChildForm(new ServicesForm(), "دليل الخدمات ");
         }
 
         private void Collectors_MenuItem_Click(object sender, EventArgs e)
