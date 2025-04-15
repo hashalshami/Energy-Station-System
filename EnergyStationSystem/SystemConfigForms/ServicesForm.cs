@@ -20,11 +20,15 @@ namespace EnergyStationSystem.SystemConfigForms
             txtNumber.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtDescription.Text = "";
+            txtNote.Text = "";
         }
 
         private void LoadData()
         {
+            cmbStatus.Items.Clear();
+            cmbStatus.Items.Add("مستمر");  // تمثل القيمة 1
+            cmbStatus.Items.Add("موقف");   // تمثل القيمة 0
+            cmbStatus.SelectedIndex = 0;
 
             try
             {
@@ -77,12 +81,13 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO Services (name, price, description) VALUES (@name, @price, @description)";
+                    string query = "INSERT INTO Services (name, price ,status, note) VALUES (@name, @price, @status, @note)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@status", cmbStatus.SelectedItem.ToString() == "مستمر" ? 1 : 0);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
 
                         int result = cmd.ExecuteNonQuery();
@@ -125,14 +130,15 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Services SET name = @name, price = @price, description = @description WHERE id = @id";
+                    string query = "UPDATE Services SET name = @name, price = @price, status = @status, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", serviceID);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@status", cmbStatus.SelectedItem.ToString() == "مستمر" ? 1 : 0);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
@@ -202,10 +208,7 @@ namespace EnergyStationSystem.SystemConfigForms
         }
 
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
@@ -218,15 +221,56 @@ namespace EnergyStationSystem.SystemConfigForms
 
         }
 
+       
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Services WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                bool isActive = Convert.ToBoolean(row.Cells["colStatus"].Value);
+
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                txtPrice.Text = row.Cells["colPrice"].Value.ToString();
-                txtDescription.Text = row.Cells["colDescription"].Value.ToString();
+                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
+                //txtPrice.Text = row.Cells["price"].Value.ToString();
+                cmbStatus.SelectedItem = isActive ? "مستمر" : "موقف";
+                //txtNote.Text = row.Cells["colNote"].Value.ToString();
+
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "colStatus" && e.Value != null)
+            {
+                bool statusValue = Convert.ToBoolean(e.Value);
+                e.Value = statusValue ? "مستمر" : "موقف";
+                e.FormattingApplied = true;
             }
         }
     }

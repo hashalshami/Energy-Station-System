@@ -13,11 +13,11 @@ namespace EnergyStationSystem
 {
     public partial class MainForm : Form
     {
-        private void OpenChildForm(Form childForm, string title = "دليل محطة الكهرباء")
+        private void OpenChildForm(Form childForm)
         {
             if (panelContainer.Controls.Count > 0)
                 panelContainer.Controls.RemoveAt(0);
-            titleBtn.Text = title;
+            titleBtn.Text = childForm.Text;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -27,6 +27,7 @@ namespace EnergyStationSystem
             childForm.BringToFront();
             childForm.Show();
         }
+
         public MainForm()
         {
             InitializeComponent();
@@ -34,47 +35,47 @@ namespace EnergyStationSystem
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new ServicesForm(), "دليل الخدمات ");
+            OpenChildForm(new ContractsForm());
+            //OpenChildForm(new TestForm());
         }
 
         private void Collectors_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new CollectorsForm(), "دليل المحصلين");
+            OpenChildForm(new CollectorsForm());
         }
 
         private void Blocks_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BlocksForm(), "دليل المربعات");
+            OpenChildForm(new BlocksForm());
         }
 
         private void Regions_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new RegionsForm(), "دليل المناطق");
+            OpenChildForm(new RegionsForm());
         }
 
         private void CentralMeter_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new CentralMetersForm(), "دليل العدادات المركزية");
+            OpenChildForm(new CentralMetersForm());
         }
 
         private void SubscriptionFees_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new SubscriptionRatesForm(), "دليل تعرفة الاشتراكات ");
         }
 
         private void Contracts_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ContractsForm(), "دليل نماذج العقود ");
+            OpenChildForm(new ContractsForm());
         }
 
         private void Services_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ServicesForm(), "دليل الخدمات ");
+            OpenChildForm(new ServicesForm());
         }
 
         private void Fines_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FinesForm(), "دليل الغرامات ");
+            OpenChildForm(new FinesForm());
         }
 
        

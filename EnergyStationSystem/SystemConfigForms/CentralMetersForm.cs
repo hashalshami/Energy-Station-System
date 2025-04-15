@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace EnergyStationSystem.SystemConfigForms
 {
@@ -14,6 +15,37 @@ namespace EnergyStationSystem.SystemConfigForms
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+        private void ClearFields()
+        {
+            txtNumber.Text = "";
+            txtName.Text = "";
+            txtPhone.Text = "";
+            txtNote.Text = "";
+        }
+
+        private void LoadData()
+        {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM CentralMeters", conn);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
+
+        
         public CentralMetersForm()
         {
             InitializeComponent();
@@ -21,6 +53,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void CentralMetersForm_Load(object sender, EventArgs e)
         {
+            LoadData();
             dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
@@ -35,11 +68,6 @@ namespace EnergyStationSystem.SystemConfigForms
         }
 
         private void deleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchBtn_Click(object sender, EventArgs e)
         {
 
         }

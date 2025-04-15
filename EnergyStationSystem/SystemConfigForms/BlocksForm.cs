@@ -210,11 +210,6 @@ namespace EnergyStationSystem.SystemConfigForms
 
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             ClearFields();

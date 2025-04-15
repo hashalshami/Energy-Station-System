@@ -426,7 +426,7 @@
             this.Name = "CollectorsForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "CollectorsForm";
+            this.Text = "دليل المحصلين";
             this.Load += new System.EventHandler(this.CollectorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);

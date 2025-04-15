@@ -37,7 +37,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.printBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
@@ -78,7 +77,6 @@
             // 
             this.groupBox2.Controls.Add(this.printBtn);
             this.groupBox2.Controls.Add(this.refreshBtn);
-            this.groupBox2.Controls.Add(this.searchBtn);
             this.groupBox2.Controls.Add(this.deleteBtn);
             this.groupBox2.Controls.Add(this.editBtn);
             this.groupBox2.Controls.Add(this.addBtn);
@@ -98,7 +96,7 @@
             this.printBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.printBtn.Location = new System.Drawing.Point(69, 13);
+            this.printBtn.Location = new System.Drawing.Point(209, 13);
             this.printBtn.Margin = new System.Windows.Forms.Padding(5);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(130, 43);
@@ -115,7 +113,7 @@
             this.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(209, 13);
+            this.refreshBtn.Location = new System.Drawing.Point(349, 13);
             this.refreshBtn.Margin = new System.Windows.Forms.Padding(5);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(130, 43);
@@ -123,23 +121,6 @@
             this.refreshBtn.Text = "تحديث";
             this.refreshBtn.UseVisualStyleBackColor = false;
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.BackColor = System.Drawing.Color.Teal;
-            this.searchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchBtn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(349, 13);
-            this.searchBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(130, 43);
-            this.searchBtn.TabIndex = 3;
-            this.searchBtn.Text = "بحث";
-            this.searchBtn.UseVisualStyleBackColor = false;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // deleteBtn
             // 
@@ -211,8 +192,7 @@
             // 
             // comboCollectors
             // 
-            this.comboCollectors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboCollectors.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboCollectors.FormattingEnabled = true;
             this.comboCollectors.Items.AddRange(new object[] {
             "غير محدد"});
@@ -223,8 +203,7 @@
             // 
             // comboRegions
             // 
-            this.comboRegions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboRegions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboRegions.FormattingEnabled = true;
             this.comboRegions.Items.AddRange(new object[] {
             "غير محدد"});
@@ -235,8 +214,7 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(824, 115);
@@ -247,8 +225,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(824, 85);
@@ -259,8 +236,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(824, 55);
@@ -271,8 +247,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(824, 25);
@@ -283,8 +258,7 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,8 +270,7 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNumber.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNumber.Enabled = false;
             this.txtNumber.Location = new System.Drawing.Point(732, 22);
@@ -400,7 +373,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "BlocksForm";
-            this.Text = "BlocksForm";
+            this.Text = "دليل المربعات";
             this.Load += new System.EventHandler(this.BlocksForm_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -417,7 +390,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Button refreshBtn;
-        private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.Button editBtn;
         private System.Windows.Forms.Button addBtn;

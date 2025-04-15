@@ -202,11 +202,6 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -224,8 +219,32 @@ namespace EnergyStationSystem.SystemConfigForms
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                txtPrice.Text = row.Cells["colPrice"].Value.ToString();
-                txtDescription.Text = row.Cells["colDescription"].Value.ToString();
+                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
+                //txtDescription.Text = row.Cells["colDescription"].Value.ToString();
+            }
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Fines WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
             }
         }
 

@@ -15,3 +15,4 @@ D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemC
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.CentralMetersForm.resources
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.ContractsForm.resources
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.FinesForm.resources
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.TestForm.resources
