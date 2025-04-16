@@ -162,13 +162,10 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int collectorId;
-
-            if (!int.TryParse(txtNumber.Text, out collectorId))
-            {
-                MessageBox.Show("يرجى تحديد رقم صحيح للمحصل!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            int collectorId = db.GetValidatedNumber(txtNumber.Text, "يرجى تحديد رقم صحيح للمحصل!"); ;
+            if (collectorId == -1)
                 return;
-            }
+            
 
             DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذا المحصل؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -188,9 +185,10 @@ namespace EnergyStationSystem.SystemConfigForms
                             int rows = cmd.ExecuteNonQuery();
                             if (rows > 0)
                             {
+                                LoadData();
                                 MessageBox.Show("تم حذف السجل بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields();
-                                LoadData();
+                                
                             }
                             else
                             {

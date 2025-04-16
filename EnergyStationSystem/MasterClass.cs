@@ -10,6 +10,7 @@ namespace EnergyStationSystem
 {
     class MasterClass
     {
+        
 
         public static void ApplyRowStyle(object sender, DataGridViewRowPrePaintEventArgs e)
         {

@@ -134,6 +134,9 @@
     <EmbeddedResource Include="SystemConfigForms\CollectorsForm.resx">
       <DependentUpon>CollectorsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\ContractsForm.en.resx">
+      <DependentUpon>ContractsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\ContractsForm.resx">
       <DependentUpon>ContractsForm.cs</DependentUpon>
     </EmbeddedResource>

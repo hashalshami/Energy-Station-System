@@ -15,6 +15,29 @@ namespace EnergyStationSystem.SystemConfigForms
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+        private void SearchName(string name)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Services WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
         private void ClearFields()
         {
             txtNumber.Text = "";
@@ -225,26 +248,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
-                {
-                    string query = "SELECT * FROM Services WHERE name LIKE @name";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    dataGridView1.DataSource = bs;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
-            }
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -256,10 +260,9 @@ namespace EnergyStationSystem.SystemConfigForms
 
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
-                //txtPrice.Text = row.Cells["price"].Value.ToString();
+                txtPrice.Text = row.Cells["colPrice"].Value.ToString();
                 cmbStatus.SelectedItem = isActive ? "مستمر" : "موقف";
-                //txtNote.Text = row.Cells["colNote"].Value.ToString();
+                txtNote.Text = row.Cells["colNote"].Value.ToString();
 
             }
         }

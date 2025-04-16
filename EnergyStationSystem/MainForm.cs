@@ -32,10 +32,10 @@ namespace EnergyStationSystem
         {
             InitializeComponent();
         }
-
+        
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new ContractsForm());
+            OpenChildForm(new TestForm());
             //OpenChildForm(new TestForm());
         }
 

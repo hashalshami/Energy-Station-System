@@ -46,7 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtLimit = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -201,7 +201,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNote);
-            this.groupBox1.Controls.Add(this.txtPhone);
+            this.groupBox1.Controls.Add(this.txtLimit);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtNumber);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -266,16 +266,16 @@
             this.txtNote.Size = new System.Drawing.Size(358, 26);
             this.txtNote.TabIndex = 3;
             // 
-            // txtPhone
+            // txtLimit
             // 
-            this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtPhone.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtPhone.Location = new System.Drawing.Point(566, 76);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(5);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPhone.Size = new System.Drawing.Size(217, 20);
-            this.txtPhone.TabIndex = 2;
+            this.txtLimit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtLimit.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtLimit.Location = new System.Drawing.Point(566, 76);
+            this.txtLimit.Margin = new System.Windows.Forms.Padding(5);
+            this.txtLimit.Name = "txtLimit";
+            this.txtLimit.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtLimit.Size = new System.Drawing.Size(217, 20);
+            this.txtLimit.TabIndex = 2;
             // 
             // txtName
             // 
@@ -349,6 +349,7 @@
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(892, 180);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // colId
             // 
@@ -364,7 +365,7 @@
             this.colName.DataPropertyName = "name";
             this.colName.HeaderText = "اسم العداد المركزي";
             this.colName.Name = "colName";
-            this.colName.Width = 135;
+            this.colName.Width = 123;
             // 
             // colLimit
             // 
@@ -380,7 +381,6 @@
             this.colLastRead.HeaderText = "القراءة السابقة";
             this.colLastRead.Name = "colLastRead";
             this.colLastRead.Visible = false;
-            this.colLastRead.Width = 113;
             // 
             // colNewRead
             // 
@@ -389,7 +389,6 @@
             this.colNewRead.HeaderText = "القراءة الحالية";
             this.colNewRead.Name = "colNewRead";
             this.colNewRead.Visible = false;
-            this.colNewRead.Width = 110;
             // 
             // colDate
             // 
@@ -397,7 +396,7 @@
             this.colDate.DataPropertyName = "date";
             this.colDate.HeaderText = "تاريخ الإدخال";
             this.colDate.Name = "colDate";
-            this.colDate.Width = 102;
+            this.colDate.Width = 94;
             // 
             // colNote
             // 
@@ -441,7 +440,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNote;
-        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.TextBox txtLimit;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.DataGridView dataGridView1;
