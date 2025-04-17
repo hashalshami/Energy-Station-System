@@ -10,7 +10,8 @@ namespace EnergyStationSystem
 {
     class MasterClass
     {
-
+        
+        //دالة تقوم بتلوين صفوف الجدول داتا جريد  (صف بصف) لون بلون
         public static void ApplyRowStyle(object sender, DataGridViewRowPrePaintEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
@@ -28,7 +29,7 @@ namespace EnergyStationSystem
             }
         }
 
-
+        //لتلوين الازرار - لم يتم استخدامها
         public static void ApplyButtonStyle(Button button)
         {
             button.FlatStyle = FlatStyle.Flat; 
