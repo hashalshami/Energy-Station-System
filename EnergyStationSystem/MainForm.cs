@@ -35,13 +35,13 @@ namespace EnergyStationSystem
         
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //OpenChildForm(new Regions());
+            //OpenChildForm(new Collectors());
             OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new Collectors());
-            OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new SubscriptionTypes());
+            //OpenChildForm(new SubscriptionTypes());
+            //OpenChildForm(new SubscriptionTypes());
+            //OpenChildForm(new SubscriptionTypes());
+            //OpenChildForm(new SubscriptionTypes());
 
             //OpenChildForm(new TestForm());
         }

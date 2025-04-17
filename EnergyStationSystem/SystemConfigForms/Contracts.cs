@@ -53,7 +53,6 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void LoadData()
         {
-            ClearFields();
             try
             {
                 using (SqlConnection con = new SqlConnection(db.connectionString))
@@ -152,7 +151,7 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection con = new SqlConnection(db.connectionString))
                 {
                     con.Open();
-                    int contractId = db.GetValidatedNumber(txtNumber.Text, "يرجى تحديد رقم صحيح للعداد المركزي!", "خطأ"); ;
+                    int contractId = db.GetValidatedNumber(txtNumber.Text, "يرجى تحديد رقم صحيح للعداد المركزي!"); ;
                     if(contractId == -1)
                         return;
 

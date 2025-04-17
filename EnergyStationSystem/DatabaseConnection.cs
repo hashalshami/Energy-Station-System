@@ -17,7 +17,7 @@ namespace EnergyStationSystem
         // إذا كانت القيمة غير صالحة (فارغة أو غير رقم)، تعرض رسالة خطأ وتعيد -1
         //طريقة استدعائها نمرر مربع النص مع قيمته النصية ثم الرسالة المعروضة مثلا
         // GetValidatedNumber(TextBox.Text , "يرجى ادخال رقم صحيح")
-        public int GetValidatedNumber(string input, string message = "يرجى تحديد رقم صحيح!" )
+        public int GetValidatedNumber(string input, string message = "يرجى تحديد رقم صحيح!",string title="خطأ !" )
         {
             int number;
 
@@ -25,7 +25,7 @@ namespace EnergyStationSystem
             if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out number))
             {
                 // عرض رسالة خطأ للمستخدم في حال كانت القيمة غير صحيحة
-                MessageBox.Show(message, "خطأ !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return -1; // إرجاع -1 للدلالة على أن القيمة غير صالحة
             }

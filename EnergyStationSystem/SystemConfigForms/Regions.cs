@@ -51,9 +51,26 @@ namespace EnergyStationSystem.SystemConfigForms
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                using (SqlConnection con = new SqlConnection(db.connectionString))
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Regions", conn);
+                    con.Open();
+                    string queryCentral = "SELECT id, name FROM CentralMeters";
+                    SqlDataAdapter daCollectors = new SqlDataAdapter(queryCentral, con);
+                    DataTable dtCentral = new DataTable();
+                    daCollectors.Fill(dtCentral);
+
+                    cmbCentralMeter.DataSource = dtCentral;
+                    cmbCentralMeter.DisplayMember = "name";
+                    cmbCentralMeter.ValueMember = "id";
+                    cmbCentralMeter.SelectedIndex = -1;
+
+
+                    string GridQuery = @"SELECT Regions.id, Regions.name AS 'name',
+                                    CentralMeters.name AS 'central_meter',Regions.note AS 'note'  , Regions.date AS 'date' 
+                                    FROM Regions 
+                                    JOIN CentralMeters ON Regions.central_meter_id = CentralMeters.id";
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(GridQuery, con);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     BindingSource bs = new BindingSource();
@@ -70,11 +87,11 @@ namespace EnergyStationSystem.SystemConfigForms
         public Regions()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void RegionsForm_Load(object sender, EventArgs e)
         {
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
             LoadData();
             ClearFields();
         }
@@ -92,19 +109,26 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection con = new SqlConnection(db.connectionString))
                 {
                     con.Open();
-                    string query = "INSERT INTO Regions (name, note) VALUES (@name, @note)";
+                    string query = "INSERT INTO Regions (name, central_meter_id, note, date) VALUES (@name, @central_meter_id, @note, @date)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@name", txtName.Text);
-                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+                        if (cmbCentralMeter.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("يرجى اختيار العداد المركزي!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
 
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@central_meter_id", cmbCentralMeter.SelectedValue);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
+                            LoadData();
                             MessageBox.Show("تمت إضافة المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
-                            LoadData();
                         }
                         else
                         {
@@ -134,21 +158,22 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Regions SET name = @name, note = @note WHERE id = @id";
+                    string query = "UPDATE Regions SET name = @name,central_meter_id =@central_meter_id, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", regionID);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@central_meter_id", cmbCentralMeter.SelectedValue);
                         cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
+                            LoadData();
                             MessageBox.Show("تم تعديل بيانات المنطقة بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
-                            LoadData();
                         }
                         else
                         {
@@ -235,6 +260,7 @@ namespace EnergyStationSystem.SystemConfigForms
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
                 txtNote.Text = row.Cells["colNote"].Value.ToString();
+                cmbCentralMeter.Text = row.Cells["colCentralMeter"].Value.ToString();
             }
         }
 

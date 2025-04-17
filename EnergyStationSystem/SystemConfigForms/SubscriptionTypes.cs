@@ -84,20 +84,152 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void addBtn_Click(object sender, EventArgs e)
         {
+            int unit_price = db.GetValidatedNumber(txtUnitPrice.Text ,"يرجى إدخال سعر الوحدة !", "تنبيه");
+            int service_fees = db.GetValidatedNumber(txtUnitPrice.Text, "يرجى إدخال تكلفة الخدمة !", "تنبيه");
+            if(unit_price == -1 || service_fees ==-1)
+                return;
+
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم نوع الاشتراك!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(db.connectionString))
+                {
+                    con.Open();
+                    string query = @"INSERT INTO SubscriptionTypes (name, unit_price, service_fees, note, date) 
+                             VALUES (@name, @unit_price, @service_fees, @note, @date)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@unit_price", int.Parse(txtUnitPrice.Text));
+                        cmd.Parameters.AddWithValue("@service_fees", int.Parse(txtServiceFees.Text));
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            LoadData();
+                            MessageBox.Show("تمت إضافة نوع الاشتراك بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("حدث خطأ أثناء الإضافة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNumber.Text))
+            {
+                MessageBox.Show("يرجى تحديد رقم نوع الاشتراك!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                MessageBox.Show("يرجى إدخال اسم نوع الاشتراك!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int unit_price = db.GetValidatedNumber(txtUnitPrice.Text, "يرجى إدخال سعر الوحدة !", "تنبيه");
+            int service_fees = db.GetValidatedNumber(txtUnitPrice.Text, "يرجى إدخال تكلفة الخدمة !", "تنبيه");
+            if (unit_price == -1 || service_fees == -1)
+                return;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(db.connectionString))
+                {
+                    con.Open();
+                    string query = "UPDATE SubscriptionTypes SET name = @name, unit_price = @unit_price, service_fees = @service_fees, note = @note WHERE id = @id";
+                                  
+                                 
+                                 
+                             
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", int.Parse(txtNumber.Text));
+                        cmd.Parameters.AddWithValue("@name", txtName.Text);
+                        cmd.Parameters.AddWithValue("@unit_price", unit_price);
+                        cmd.Parameters.AddWithValue("@service_fees", service_fees);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            LoadData();
+                            MessageBox.Show("تم تعديل نوع الاشتراك بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم العثور على السجل!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "رقم") // اسم العمود
-    {
-                int number;
-        if (e.Value != null && int.TryParse(e.Value.ToString(), out number))
-        {
-            e.Value = number.ToString(CultureInfo.InvariantCulture); // عرض الرقم بالإنجليزي
-            e.FormattingApplied = true;
-        }
-    }
+            if (string.IsNullOrWhiteSpace(txtNumber.Text))
+            {
+                MessageBox.Show("يرجى تحديد رقم نوع الاشتراك!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult dialog = MessageBox.Show("هل أنت متأكد من حذف نوع الاشتراك؟", "تأكيد", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(db.connectionString))
+                    {
+                        con.Open();
+                        string query = "DELETE FROM SubscriptionTypes WHERE id = @id";
+                        using (SqlCommand cmd = new SqlCommand(query, con))
+                        {
+                            cmd.Parameters.AddWithValue("@id", int.Parse(txtNumber.Text));
+                            int rows = cmd.ExecuteNonQuery();
+
+                            if (rows > 0)
+                            {
+                                LoadData();
+                                MessageBox.Show("تم حذف نوع الاشتراك بنجاح.", "تم", MessageBoxButtons.OK, MessageBoxIcon.Information);                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("لم يتم العثور على السجل!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
