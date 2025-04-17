@@ -1,6 +1,6 @@
 ﻿namespace EnergyStationSystem.SystemConfigForms
 {
-    partial class BlocksForm
+    partial class Blocks
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace EnergyStationSystem.SystemConfigForms
 {
-    partial class RegionsForm
+    partial class Regions
     {
         /// <summary>
         /// Required designer variable.

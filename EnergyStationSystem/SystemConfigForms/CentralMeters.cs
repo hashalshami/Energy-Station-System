@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class CentralMetersForm : Form
+    public partial class CentralMeters : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
 
@@ -46,7 +46,7 @@ namespace EnergyStationSystem.SystemConfigForms
         }
 
         
-        public CentralMetersForm()
+        public CentralMeters()
         {
             InitializeComponent();
         }

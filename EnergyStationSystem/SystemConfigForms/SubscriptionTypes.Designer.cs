@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(804, 363);
             this.Name = "SubscriptionTypes";
             this.Text = "دليل انواع الإشتراكات";
             this.ResumeLayout(false);

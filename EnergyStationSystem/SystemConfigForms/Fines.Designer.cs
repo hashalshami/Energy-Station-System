@@ -1,6 +1,6 @@
 ﻿namespace EnergyStationSystem.SystemConfigForms
 {
-    partial class FinesForm
+    partial class Fines
     {
         /// <summary>
         /// Required designer variable.

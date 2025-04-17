@@ -9,51 +9,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
-
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class RegionsForm : Form
+    public partial class Fines : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
 
-        private void SearchName(string name) 
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
-                {
-                    string query = "SELECT * FROM Regions WHERE name LIKE @name";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    dataGridView1.DataSource = bs;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
-            }
-        }
-        
         private void ClearFields()
         {
             txtNumber.Text = "";
             txtName.Text = "";
-            txtNote.Text = "";
+            txtPrice.Text = "";
+            txtDescription.Text = "";
         }
 
         private void LoadData()
         {
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Regions", conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Fines", conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     BindingSource bs = new BindingSource();
@@ -66,45 +43,56 @@ namespace EnergyStationSystem.SystemConfigForms
             {
                 MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
             }
+            ClearFields();
         }
-        public RegionsForm()
+
+        
+        public Fines()
         {
             InitializeComponent();
             dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
-        private void RegionsForm_Load(object sender, EventArgs e)
+        private void FinesForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            ClearFields();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtPrice.Text) )
             {
-                MessageBox.Show("يرجى ملء اسم المنطقة  !", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("يرجى ملء جميع الحقول!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            long price;
+            if (!long.TryParse(txtPrice.Text, out price) )
+            {
+                MessageBox.Show("يرجى إدخال مبلغ صحيح !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             try
             {
-                using (SqlConnection con = new SqlConnection(db.connectionString))
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
-                    con.Open();
-                    string query = "INSERT INTO Regions (name, note) VALUES (@name, @note)";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    conn.Open();
+                    string query = "INSERT INTO Fines (name, price, description, date) VALUES (@name, @price, @description, @date)";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
-                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            MessageBox.Show("تمت إضافة المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields();
                             LoadData();
+                            MessageBox.Show("تمت إضافة الغرامة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -121,34 +109,39 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int regionID;
-            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out regionID))
+            int fineId;
+            long price;
+            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out fineId))
             {
-                MessageBox.Show("يرجى تحديد منطقة صحيحة او رقم منطقة صحيح  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تحديد رقم صحيح للغرامة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-
+            if (!long.TryParse(txtPrice.Text, out  price))
+            {
+                MessageBox.Show("يرجى إدخال مبلغ صحيح !!!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Regions SET name = @name, note = @note WHERE id = @id";
+                    string query = "UPDATE Fines SET name = @name, price = @price, description = @description WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", regionID);
+                        cmd.Parameters.AddWithValue("@id", fineId);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
-                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
+                        cmd.Parameters.AddWithValue("@price", price);
+                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            MessageBox.Show("تم تعديل بيانات المنطقة بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            ClearFields();
                             LoadData();
+                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
                         }
                         else
                         {
@@ -165,35 +158,35 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int areaID;
+            int fineID;
 
-            if (!int.TryParse(txtNumber.Text, out areaID))
+            if (!int.TryParse(txtNumber.Text, out fineID))
             {
-                MessageBox.Show("يرجى تحديد رقم صحيح للمنطقة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تحديد غرامة صحيحة  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه المنطقة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه الغرامة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(db.connectionString))
+                    using (SqlConnection con = new SqlConnection(db.connectionString))
                     {
-                        conn.Open();
-                        string query = "DELETE FROM Regions WHERE id = @id";
+                        con.Open();
+                        string query = "DELETE FROM Fines WHERE id = @id";
 
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        using (SqlCommand cmd = new SqlCommand(query, con))
                         {
-                            cmd.Parameters.AddWithValue("@id", areaID);
+                            cmd.Parameters.AddWithValue("@id", fineID);
 
                             int rows = cmd.ExecuteNonQuery();
                             if (rows > 0)
                             {
-                                MessageBox.Show("تم حذف المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearFields();
                                 LoadData();
+                                MessageBox.Show("تم حذف السجل بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearFields();
                             }
                             else
                             {
@@ -211,20 +204,12 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
-            ClearFields();
             LoadData();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
         {
 
-        }
-
-        
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -234,13 +219,36 @@ namespace EnergyStationSystem.SystemConfigForms
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                txtNote.Text = row.Cells["colNote"].Value.ToString();
+                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
+                //txtDescription.Text = row.Cells["colDescription"].Value.ToString();
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Fines WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
 
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
         }
+
+
+
     }
 }

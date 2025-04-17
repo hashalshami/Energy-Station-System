@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class ContractsForm : Form
+    public partial class Contracts : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
         private MasterClass mc = new MasterClass();
@@ -91,7 +91,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
         }
 
-        public ContractsForm()
+        public Contracts()
         {
             InitializeComponent();
             dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;

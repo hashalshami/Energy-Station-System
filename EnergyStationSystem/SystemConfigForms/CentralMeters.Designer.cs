@@ -1,6 +1,6 @@
 ﻿namespace EnergyStationSystem.SystemConfigForms
 {
-    partial class CentralMetersForm
+    partial class CentralMeters
     {
         /// <summary>
         /// Required designer variable.

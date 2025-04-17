@@ -36,7 +36,7 @@ namespace EnergyStationSystem
         private void MainForm_Load(object sender, EventArgs e)
         {
             OpenChildForm(new SubscriptionTypes());
-            OpenChildForm(new CollectorsForm());
+            OpenChildForm(new Collectors());
             OpenChildForm(new SubscriptionTypes());
             OpenChildForm(new SubscriptionTypes());
             OpenChildForm(new SubscriptionTypes());
@@ -48,22 +48,22 @@ namespace EnergyStationSystem
 
         private void Collectors_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new CollectorsForm());
+            OpenChildForm(new Collectors());
         }
 
         private void Blocks_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BlocksForm());
+            OpenChildForm(new Blocks());
         }
 
         private void Regions_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new RegionsForm());
+            OpenChildForm(new Regions());
         }
 
         private void CentralMeter_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new CentralMetersForm());
+            OpenChildForm(new CentralMeters());
         }
 
         private void SubscriptionFees_MenuItem_Click(object sender, EventArgs e)
@@ -72,17 +72,17 @@ namespace EnergyStationSystem
 
         private void Contracts_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ContractsForm());
+            OpenChildForm(new Contracts());
         }
 
         private void Services_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ServicesForm());
+            OpenChildForm(new Services());
         }
 
         private void Fines_MenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FinesForm());
+            OpenChildForm(new Fines());
         }
 
        

@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class BlocksForm : Form
+    public partial class Blocks : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
 
@@ -73,7 +73,7 @@ namespace EnergyStationSystem.SystemConfigForms
             
         }
 
-        public BlocksForm()
+        public Blocks()
         {
             InitializeComponent();
         }

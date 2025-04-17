@@ -9,29 +9,51 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class CollectorsForm : Form
+    public partial class Regions : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+        private void SearchName(string name) 
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Regions WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
+        
         private void ClearFields()
         {
             txtNumber.Text = "";
             txtName.Text = "";
-            txtPhone.Text = "";
-            txtAddress.Text = "";
             txtNote.Text = "";
         }
 
         private void LoadData()
         {
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Collectors", conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Regions", conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     BindingSource bs = new BindingSource();
@@ -45,56 +67,44 @@ namespace EnergyStationSystem.SystemConfigForms
                 MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
             }
         }
-
-        
-        public CollectorsForm()
+        public Regions()
         {
             InitializeComponent();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
-        private void CollectorsForm_Load(object sender, EventArgs e)
+        private void RegionsForm_Load(object sender, EventArgs e)
         {
             LoadData();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
+            ClearFields();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtPhone.Text) || string.IsNullOrWhiteSpace(txtAddress.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                MessageBox.Show("يرجى ملء جميع الحقول!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int phoneNumber;
-            //if (!long.TryParse(txtPhone.Text, out phoneNumber) || txtPhone.Text.Length != 9)
-            if (!int.TryParse(txtPhone.Text, out phoneNumber))
-            {
-                MessageBox.Show("يرجى إدخال رقم هاتف صحيح !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى ملء اسم المنطقة  !", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                using (SqlConnection con = new SqlConnection(db.connectionString))
                 {
-                    conn.Open();
-                    string query = "INSERT INTO Collectors (name, phone, address, note) VALUES (@name, @phone, @address, @note)";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    con.Open();
+                    string query = "INSERT INTO Regions (name, note) VALUES (@name, @note)";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
-                        cmd.Parameters.AddWithValue("@phone", phoneNumber);
-                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
                         cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            LoadData();
-                            MessageBox.Show("تمت إضافة البيانات بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("تمت إضافة المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
-                            
+                            LoadData();
                         }
                         else
                         {
@@ -111,39 +121,32 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int collectorId;
-            long phoneNumber;
-            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out collectorId))
+            int regionID;
+            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out regionID))
             {
-                MessageBox.Show("يرجى تحديد رقم صحيح للمحصل!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تحديد منطقة صحيحة او رقم منطقة صحيح  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txtPhone.Text) || !long.TryParse(txtPhone.Text, out  phoneNumber) || txtPhone.Text.Length != 9)
-            {
-                MessageBox.Show("يرجى إدخال رقم هاتف صحيح مكون من 9 أرقام!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Collectors SET name = @name, phone = @phone, address = @address, note = @note WHERE id = @id";
+                    string query = "UPDATE Regions SET name = @name, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", collectorId);
+                        cmd.Parameters.AddWithValue("@id", regionID);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
-                        cmd.Parameters.AddWithValue("@phone", phoneNumber);
-                        cmd.Parameters.AddWithValue("@address", txtAddress.Text);
                         cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("تم تعديل بيانات المنطقة بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ClearFields();
                             LoadData();
                         }
@@ -162,12 +165,15 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int collectorId = db.GetValidatedNumber(txtNumber.Text, "يرجى تحديد رقم صحيح للمحصل!"); ;
-            if (collectorId == -1)
-                return;
-            
+            int areaID;
 
-            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذا المحصل؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (!int.TryParse(txtNumber.Text, out areaID))
+            {
+                MessageBox.Show("يرجى تحديد رقم صحيح للمنطقة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه المنطقة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -176,19 +182,18 @@ namespace EnergyStationSystem.SystemConfigForms
                     using (SqlConnection conn = new SqlConnection(db.connectionString))
                     {
                         conn.Open();
-                        string query = "DELETE FROM Collectors WHERE id = @id";
+                        string query = "DELETE FROM Regions WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@id", collectorId);
+                            cmd.Parameters.AddWithValue("@id", areaID);
 
                             int rows = cmd.ExecuteNonQuery();
                             if (rows > 0)
                             {
-                                LoadData();
-                                MessageBox.Show("تم حذف السجل بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("تم حذف المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields();
-                                
+                                LoadData();
                             }
                             else
                             {
@@ -204,15 +209,22 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
-        private void searchBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             ClearFields();
             LoadData();
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -222,17 +234,13 @@ namespace EnergyStationSystem.SystemConfigForms
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                txtPhone.Text = row.Cells["colPhone"].Value.ToString();
-                txtAddress.Text = row.Cells["colAddress"].Value.ToString();
                 txtNote.Text = row.Cells["colNote"].Value.ToString();
             }
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }

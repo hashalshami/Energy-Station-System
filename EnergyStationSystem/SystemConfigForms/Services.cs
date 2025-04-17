@@ -11,26 +11,53 @@ using System.Data.SqlClient;
 
 namespace EnergyStationSystem.SystemConfigForms
 {
-    public partial class FinesForm : Form
+    public partial class Services : Form
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+        private void SearchName(string name)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Services WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
         private void ClearFields()
         {
             txtNumber.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtDescription.Text = "";
+            txtNote.Text = "";
         }
 
         private void LoadData()
         {
+            cmbStatus.Items.Clear();
+            cmbStatus.Items.Add("مستمر");  // تمثل القيمة 1
+            cmbStatus.Items.Add("موقف");   // تمثل القيمة 0
+            cmbStatus.SelectedIndex = 0;
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Fines", conn);
+                    SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Services", conn);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
                     BindingSource bs = new BindingSource();
@@ -46,28 +73,27 @@ namespace EnergyStationSystem.SystemConfigForms
             ClearFields();
         }
 
-        
-        public FinesForm()
+        public Services()
         {
             InitializeComponent();
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
-        private void FinesForm_Load(object sender, EventArgs e)
+        private void ServicesForm_Load(object sender, EventArgs e)
         {
             LoadData();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtPrice.Text) )
+            if (string.IsNullOrWhiteSpace(txtName.Text) || string.IsNullOrWhiteSpace(txtPrice.Text))
             {
                 MessageBox.Show("يرجى ملء جميع الحقول!", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            long price;
-            if (!long.TryParse(txtPrice.Text, out price) )
+            int price;
+            if (!int.TryParse(txtPrice.Text, out price))
             {
                 MessageBox.Show("يرجى إدخال مبلغ صحيح !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -78,13 +104,13 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO Fines (name, price, description, date) VALUES (@name, @price, @description, @date)";
+                    string query = "INSERT INTO Services (name, price ,status, note) VALUES (@name, @price, @status, @note)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
-                        cmd.Parameters.AddWithValue("@date", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@status", cmbStatus.SelectedItem.ToString() == "مستمر" ? 1 : 0);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
 
                         int result = cmd.ExecuteNonQuery();
@@ -109,15 +135,15 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            int fineId;
-            long price;
-            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out fineId))
+            int serviceID;
+            int price;
+            if (string.IsNullOrWhiteSpace(txtNumber.Text) || !int.TryParse(txtNumber.Text, out serviceID))
             {
-                MessageBox.Show("يرجى تحديد رقم صحيح للغرامة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تحديد رقم صحيح للخدمة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (!long.TryParse(txtPrice.Text, out  price))
+            if (!int.TryParse(txtPrice.Text, out  price))
             {
                 MessageBox.Show("يرجى إدخال مبلغ صحيح !!!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -127,21 +153,22 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Fines SET name = @name, price = @price, description = @description WHERE id = @id";
+                    string query = "UPDATE Services SET name = @name, price = @price, status = @status, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", fineId);
+                        cmd.Parameters.AddWithValue("@id", serviceID);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@status", cmbStatus.SelectedItem.ToString() == "مستمر" ? 1 : 0);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
                             LoadData();
-                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -156,17 +183,18 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
+
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int fineID;
+            int serviceID;
 
-            if (!int.TryParse(txtNumber.Text, out fineID))
+            if (!int.TryParse(txtNumber.Text, out serviceID))
             {
-                MessageBox.Show("يرجى تحديد غرامة صحيحة  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("يرجى تحديد خدمة صحيحة  !", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه الغرامة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه الخدمة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
@@ -175,11 +203,11 @@ namespace EnergyStationSystem.SystemConfigForms
                     using (SqlConnection con = new SqlConnection(db.connectionString))
                     {
                         con.Open();
-                        string query = "DELETE FROM Fines WHERE id = @id";
+                        string query = "DELETE FROM Services WHERE id = @id";
 
                         using (SqlCommand cmd = new SqlCommand(query, con))
                         {
-                            cmd.Parameters.AddWithValue("@id", fineID);
+                            cmd.Parameters.AddWithValue("@id", serviceID);
 
                             int rows = cmd.ExecuteNonQuery();
                             if (rows > 0)
@@ -202,9 +230,13 @@ namespace EnergyStationSystem.SystemConfigForms
             }
         }
 
+
+        
+
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadData();
+            ClearFields();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -212,43 +244,37 @@ namespace EnergyStationSystem.SystemConfigForms
 
         }
 
+       
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                bool isActive = Convert.ToBoolean(row.Cells["colStatus"].Value);
+
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
-                //txtDescription.Text = row.Cells["colDescription"].Value.ToString();
+                txtPrice.Text = row.Cells["colPrice"].Value.ToString();
+                cmbStatus.SelectedItem = isActive ? "مستمر" : "موقف";
+                txtNote.Text = row.Cells["colNote"].Value.ToString();
+
             }
         }
 
-        private void txtName_TextChanged(object sender, EventArgs e)
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            try
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "colStatus" && e.Value != null)
             {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
-                {
-                    string query = "SELECT * FROM Fines WHERE name LIKE @name";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    dataGridView1.DataSource = bs;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+                bool statusValue = Convert.ToBoolean(e.Value);
+                e.Value = statusValue ? "مستمر" : "موقف";
+                e.FormattingApplied = true;
             }
         }
-
-
-
     }
 }
