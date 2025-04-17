@@ -11,20 +11,31 @@ namespace EnergyStationSystem
     class DatabaseConnection
     {
         public string connectionString = "Data Source=HASH;Initial Catalog=EnergyStation_Database;Integrated Security=True";
-        public string ReseedID = "DBCC CHECKIDENT ('Collectors', RESEED, 0)";
+        //public string ReseedID = "DBCC CHECKIDENT ('Table', RESEED, 0)";
 
-        public int GetValidatedNumber(string input, string message = "يرجى تحديد رقم صحيح!", string title = "خطأ")
+        // دالة تقوم بتحويل قيمة نصية إلى رقم صحيح (int)
+        // إذا كانت القيمة غير صالحة (فارغة أو غير رقم)، تعرض رسالة خطأ وتعيد -1
+        //طريقة استدعائها نمرر مربع النص مع قيمته النصية ثم الرسالة المعروضة مثلا
+        // GetValidatedNumber(TextBox.Text , "يرجى ادخال رقم صحيح")
+        public int GetValidatedNumber(string input, string message = "يرجى تحديد رقم صحيح!" )
         {
             int number;
+
+            // التحقق إذا كانت القيمة النصية فارغة أو لا يمكن تحويلها إلى int
             if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out number))
             {
-                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return -1; 
+                // عرض رسالة خطأ للمستخدم في حال كانت القيمة غير صحيحة
+                MessageBox.Show(message, "خطأ !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return -1; // إرجاع -1 للدلالة على أن القيمة غير صالحة
             }
-            
+
+            // إذا كانت القيمة صحيحة، يتم إرجاع الرقم بعد التحويل
             return number;
         }
 
+
+        //دالة اختبار صممتها كي تتحقق من اتصال قاعدة البيانات ولكنها ليست مهمة ولم استخدمها
         public bool TestConnection()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -42,6 +53,10 @@ namespace EnergyStationSystem
                 }
             }
         }
+
+
+
+
     
     }
 }
