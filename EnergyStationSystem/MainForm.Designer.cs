@@ -32,7 +32,6 @@
             this.masterPanel = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.دليلالمشتركينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Fines_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Services_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,15 +44,16 @@
             this.SubscriptionFees_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.titleBtn = new System.Windows.Forms.Button();
             this.masterPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // masterPanel
@@ -81,7 +81,7 @@
             // 
             // topPanel
             // 
-            this.topPanel.BackColor = System.Drawing.Color.White;
+            this.topPanel.BackColor = System.Drawing.SystemColors.Control;
             this.topPanel.Controls.Add(this.panel1);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(0, 0);
@@ -89,21 +89,6 @@
             this.topPanel.Padding = new System.Windows.Forms.Padding(5, 2, 5, 2);
             this.topPanel.Size = new System.Drawing.Size(1244, 42);
             this.topPanel.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.AllowDrop = true;
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.titleLabel);
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(5, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(1234, 38);
-            this.panel1.TabIndex = 0;
             // 
             // دليلالمشتركينToolStripMenuItem
             // 
@@ -179,7 +164,7 @@
             // 
             this.SubscriptionFees_MenuItem.Name = "SubscriptionFees_MenuItem";
             this.SubscriptionFees_MenuItem.Size = new System.Drawing.Size(185, 22);
-            this.SubscriptionFees_MenuItem.Text = "دليل انواع الاشتراكات";
+            this.SubscriptionFees_MenuItem.Text = "دليل تعرفة الاشتراكات";
             this.SubscriptionFees_MenuItem.Click += new System.EventHandler(this.SubscriptionFees_MenuItem_Click);
             // 
             // EnergySystemMenuItem
@@ -204,29 +189,20 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // titleLabel
+            // panel1
             // 
-            this.titleLabel.BackColor = System.Drawing.Color.White;
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(100, 0);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(1032, 36);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "محطة الكهرباء";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            this.panel1.AllowDrop = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.titleBtn);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(5, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.panel1.Size = new System.Drawing.Size(1234, 38);
+            this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -239,6 +215,38 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // titleBtn
+            // 
+            this.titleBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.titleBtn.BackColor = System.Drawing.Color.White;
+            this.titleBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.titleBtn.CausesValidation = false;
+            this.titleBtn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.titleBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleBtn.FlatAppearance.BorderSize = 0;
+            this.titleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.titleBtn.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleBtn.ForeColor = System.Drawing.Color.Black;
+            this.titleBtn.Location = new System.Drawing.Point(100, 0);
+            this.titleBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.titleBtn.Name = "titleBtn";
+            this.titleBtn.Size = new System.Drawing.Size(1032, 36);
+            this.titleBtn.TabIndex = 6;
+            this.titleBtn.TabStop = false;
+            this.titleBtn.Text = "دليل محطة الكهرباء";
+            this.titleBtn.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -255,11 +263,11 @@
             this.masterPanel.ResumeLayout(false);
             this.masterPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +291,7 @@
         public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem Regions_MenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button titleBtn;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
