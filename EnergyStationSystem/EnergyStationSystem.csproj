@@ -104,6 +104,12 @@
     <Compile Include="SystemConfigForms\ServicesForm.Designer.cs">
       <DependentUpon>ServicesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfigForms\SubscriptionTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\SubscriptionTypes.Designer.cs">
+      <DependentUpon>SubscriptionTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\ServicesForm.resx">
       <DependentUpon>ServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\SubscriptionTypes.resx">
+      <DependentUpon>SubscriptionTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

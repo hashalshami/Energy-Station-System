@@ -19,3 +19,4 @@ D:\EnergyStationSystem\EnergyStationSystem\bin\Debug\EnergyStationSystem.pdb
 D:\EnergyStationSystem\EnergyStationSystem\bin\Debug\en\EnergyStationSystem.resources.dll
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\en\EnergyStationSystem.resources.dll
 D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.pdb
+D:\EnergyStationSystem\EnergyStationSystem\obj\Debug\EnergyStationSystem.SystemConfigForms.SubscriptionTypes.resources

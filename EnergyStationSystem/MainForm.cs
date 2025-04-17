@@ -17,7 +17,7 @@ namespace EnergyStationSystem
         {
             if (panelContainer.Controls.Count > 0)
                 panelContainer.Controls.RemoveAt(0);
-            titleBtn.Text = childForm.Text;
+            titleLabel.Text = childForm.Text;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -35,7 +35,14 @@ namespace EnergyStationSystem
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new TestForm());
+            OpenChildForm(new SubscriptionTypes());
+            OpenChildForm(new CollectorsForm());
+            OpenChildForm(new SubscriptionTypes());
+            OpenChildForm(new SubscriptionTypes());
+            OpenChildForm(new SubscriptionTypes());
+            OpenChildForm(new SubscriptionTypes());
+            OpenChildForm(new SubscriptionTypes());
+
             //OpenChildForm(new TestForm());
         }
 
