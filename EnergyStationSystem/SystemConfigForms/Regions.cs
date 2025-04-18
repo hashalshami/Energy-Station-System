@@ -190,15 +190,16 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            int areaID;
+            int regtionID;
 
-            if (!int.TryParse(txtNumber.Text, out areaID))
+            if (!int.TryParse(txtNumber.Text, out regtionID))
             {
                 MessageBox.Show("يرجى تحديد رقم صحيح للمنطقة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه المنطقة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
 
             if (result == DialogResult.Yes)
             {
@@ -211,14 +212,14 @@ namespace EnergyStationSystem.SystemConfigForms
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
-                            cmd.Parameters.AddWithValue("@id", areaID);
+                            cmd.Parameters.AddWithValue("@id", regtionID);
 
                             int rows = cmd.ExecuteNonQuery();
                             if (rows > 0)
                             {
+                                LoadData();
                                 MessageBox.Show("تم حذف المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 ClearFields();
-                                LoadData();
                             }
                             else
                             {
