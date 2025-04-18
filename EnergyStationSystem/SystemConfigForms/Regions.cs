@@ -16,6 +16,8 @@ namespace EnergyStationSystem.SystemConfigForms
     {
         private DatabaseConnection db = new DatabaseConnection();
 
+        
+
         private void SearchName(string name) 
         {
             try
@@ -43,6 +45,7 @@ namespace EnergyStationSystem.SystemConfigForms
         private void ClearFields()
         {
             txtNumber.Text = "";
+            txtBlocksCount.Text = "";
             txtName.Text = "";
             txtNote.Text = "";
         }
@@ -65,10 +68,18 @@ namespace EnergyStationSystem.SystemConfigForms
                     cmbCentralMeter.SelectedIndex = -1;
 
 
-                    string GridQuery = @"SELECT Regions.id, Regions.name AS 'name',
-                                    CentralMeters.name AS 'central_meter',Regions.note AS 'note'  , Regions.date AS 'date' 
-                                    FROM Regions 
-                                    JOIN CentralMeters ON Regions.central_meter_id = CentralMeters.id";
+                    string GridQuery = @"SELECT R.id AS 'id',  
+                                            R.name AS 'name',
+                                            CM.name AS 'central_meter',
+                                            R.note AS 'note', 
+                                            R.date AS 'date', 
+                                            COUNT(B.id) AS 'blocks'
+                                        FROM Regions R
+                                        INNER JOIN CentralMeters CM ON R.central_meter_id = CM.id
+                                        LEFT JOIN Blocks B ON R.id = B.region_id
+                                        GROUP BY R.id, R.name, R.note, R.date, CM.name
+                                        ORDER BY R.date DESC";
+                                        
 
                     SqlDataAdapter adapter = new SqlDataAdapter(GridQuery, con);
                     DataTable dt = new DataTable();
@@ -191,7 +202,7 @@ namespace EnergyStationSystem.SystemConfigForms
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             int regtionID;
-
+            int blocksCount = int.Parse(txtBlocksCount.Text);
             if (!int.TryParse(txtNumber.Text, out regtionID))
             {
                 MessageBox.Show("يرجى تحديد رقم صحيح للمنطقة!", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -199,32 +210,67 @@ namespace EnergyStationSystem.SystemConfigForms
             }
 
             DialogResult result = MessageBox.Show("هل أنت متأكد أنك تريد حذف هذه المنطقة؟", "تأكيد الحذف", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            
 
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.Yes && blocksCount > 0)
+            {
+                DialogResult blocksDel = MessageBox.Show("سوف يتم حذف كل ( المربعات ) الخاصة بهذه المنطقة - هل انت متأكد ؟", "تنبيه ! ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(blocksDel == DialogResult.Yes)
+                {
+                    int regionId = int.Parse(txtNumber.Text);
+
+                    using (SqlConnection con = new SqlConnection(db.connectionString))
+                    {
+                        con.Open();
+                        SqlTransaction transaction = con.BeginTransaction();
+
+                        try
+                        {
+                            SqlCommand deleteBlocks = new SqlCommand("DELETE FROM Blocks WHERE region_id = @regionId", con, transaction);
+                            deleteBlocks.Parameters.AddWithValue("@regionId", regionId);
+                            deleteBlocks.ExecuteNonQuery();
+
+                            SqlCommand deleteRegion = new SqlCommand("DELETE FROM Regions WHERE id = @regionId", con, transaction);
+                            deleteRegion.Parameters.AddWithValue("@regionId", regionId);
+                            int reg = deleteRegion.ExecuteNonQuery();
+                            if (reg > 0)
+                            {
+                                transaction.Commit();
+                                LoadData();
+                                MessageBox.Show("تم حذف المنطقة وجميع المربعات التابعة لها بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearFields();
+                            }
+                            
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback();
+                            MessageBox.Show("فشل الحذف: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+            }
+            else if (result == DialogResult.Yes)
             {
                 try
                 {
-                    using (SqlConnection conn = new SqlConnection(db.connectionString))
+                    using (SqlConnection con = new SqlConnection(db.connectionString))
                     {
-                        conn.Open();
+                        con.Open();
                         string query = "DELETE FROM Regions WHERE id = @id";
 
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        cmd.Parameters.AddWithValue("@id", regtionID);
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
                         {
-                            cmd.Parameters.AddWithValue("@id", regtionID);
-
-                            int rows = cmd.ExecuteNonQuery();
-                            if (rows > 0)
-                            {
-                                LoadData();
-                                MessageBox.Show("تم حذف المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                ClearFields();
-                            }
-                            else
-                            {
-                                MessageBox.Show("لم يتم العثور على السجل.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            LoadData();
+                            MessageBox.Show("تم حذف المنطقة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("لم يتم العثور على السجل.", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -233,6 +279,9 @@ namespace EnergyStationSystem.SystemConfigForms
                     MessageBox.Show("حدث خطأ: " + ex.Message, "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+            
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)
@@ -262,6 +311,7 @@ namespace EnergyStationSystem.SystemConfigForms
                 txtName.Text = row.Cells["colName"].Value.ToString();
                 txtNote.Text = row.Cells["colNote"].Value.ToString();
                 cmbCentralMeter.Text = row.Cells["colCentralMeter"].Value.ToString();
+                txtBlocksCount.Text = row.Cells["colBlocksCount"].Value.ToString();
             }
         }
 
