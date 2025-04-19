@@ -35,8 +35,8 @@ namespace EnergyStationSystem
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new Regions());
-            //OpenChildForm(new Collectors());
+            //OpenChildForm(new Regions());
+            OpenChildForm(new Collectors());
             //OpenChildForm(new SubscriptionTypes());
             //OpenChildForm(new Blocks());
             //OpenChildForm(new CentralMeters());
