@@ -59,9 +59,6 @@
                 <mxCell id="698p1tGL__TA1Hl2wthr-3" style="html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="698p1tGL__TA1Hl2wthr-2" target="axDRtoyxOWYi3-mJdKB5-5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="698p1tGL__TA1Hl2wthr-4" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="698p1tGL__TA1Hl2wthr-2" target="axDRtoyxOWYi3-mJdKB5-7" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
                 <mxCell id="698p1tGL__TA1Hl2wthr-2" value="يحتوي" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="398" y="465" width="120" height="60" as="geometry"/>
                 </mxCell>
@@ -146,8 +143,10 @@
                 <mxCell id="12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="11" target="nI9Y66owmzcPhLGqO4mS-7" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="11" target="axDRtoyxOWYi3-mJdKB5-7" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="13" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="570" y="640" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="11" value="تحتوي" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
                     <mxGeometry x="608" y="575" width="120" height="60" as="geometry"/>
@@ -157,6 +156,9 @@
                 </mxCell>
                 <mxCell id="17" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.4;entryY=0.067;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="CeG9UhR5rtRIAwY2tmK7-2" target="14" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="1191" y="130" width="100" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
