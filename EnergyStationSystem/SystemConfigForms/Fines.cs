@@ -20,7 +20,7 @@ namespace EnergyStationSystem.SystemConfigForms
             txtNumber.Text = "";
             txtName.Text = "";
             txtPrice.Text = "";
-            txtDescription.Text = "";
+            txtNote.Text = "";
         }
 
         private void LoadData()
@@ -46,7 +46,32 @@ namespace EnergyStationSystem.SystemConfigForms
             ClearFields();
         }
 
-        
+        private void SearchName(string name)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(db.connectionString))
+                {
+                    string query = "SELECT * FROM Fines WHERE name LIKE @name";
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + name + "%");
+
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    BindingSource bs = new BindingSource();
+                    bs.DataSource = dt;
+                    dataGridView1.DataSource = bs;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
+            }
+        }
+
+
+
         public Fines()
         {
             InitializeComponent();
@@ -78,12 +103,12 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "INSERT INTO Fines (name, price, description, date) VALUES (@name, @price, @description, @date)";
+                    string query = "INSERT INTO Fines (name, price, note, date) VALUES (@name, @price, @note, @date)";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
                         cmd.Parameters.AddWithValue("@date", DateTime.Now);
 
 
@@ -93,6 +118,7 @@ namespace EnergyStationSystem.SystemConfigForms
                         {
                             LoadData();
                             MessageBox.Show("تمت إضافة الغرامة بنجاح!", "نجاح", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
                         }
                         else
                         {
@@ -127,21 +153,22 @@ namespace EnergyStationSystem.SystemConfigForms
                 using (SqlConnection conn = new SqlConnection(db.connectionString))
                 {
                     conn.Open();
-                    string query = "UPDATE Fines SET name = @name, price = @price, description = @description WHERE id = @id";
+                    string query = "UPDATE Fines SET name = @name, price = @price, note = @note WHERE id = @id";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@id", fineId);
                         cmd.Parameters.AddWithValue("@name", txtName.Text);
                         cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", string.IsNullOrWhiteSpace(txtDescription.Text) ? (object)DBNull.Value : txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@note", string.IsNullOrWhiteSpace(txtNote.Text) ? (object)DBNull.Value : txtNote.Text);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
                             LoadData();
-                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);                            
+                            MessageBox.Show("تم تعديل البيانات بنجاح!", "تم التعديل", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ClearFields();
                         }
                         else
                         {
@@ -205,6 +232,7 @@ namespace EnergyStationSystem.SystemConfigForms
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadData();
+            ClearFields();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -219,36 +247,15 @@ namespace EnergyStationSystem.SystemConfigForms
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtNumber.Text = row.Cells["colID"].Value.ToString();
                 txtName.Text = row.Cells["colName"].Value.ToString();
-                //txtPrice.Text = row.Cells["colPrice"].Value.ToString();
-                //txtDescription.Text = row.Cells["colDescription"].Value.ToString();
+                txtPrice.Text = row.Cells["colPrice"].Value.ToString();
+                txtNote.Text = row.Cells["colNote"].Value.ToString();
             }
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(db.connectionString))
-                {
-                    string query = "SELECT * FROM Fines WHERE name LIKE @name";
-                    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    adapter.SelectCommand.Parameters.AddWithValue("@name", "%" + txtName.Text + "%");
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    BindingSource bs = new BindingSource();
-                    bs.DataSource = dt;
-                    dataGridView1.DataSource = bs;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("حدث خطأ عند الاتصال: " + ex.Message);
-            }
+            
         }
-
-
-
+       
     }
 }

@@ -33,6 +33,9 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.دليلالمشتركينToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Fines_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Services_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,18 +45,15 @@
             this.Collectors_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SystemConfig_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Regions_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SubscriptionFees_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SubscriptionTypes_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.masterPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // masterPanel
@@ -105,6 +105,42 @@
             this.panel1.Size = new System.Drawing.Size(1234, 38);
             this.panel1.TabIndex = 0;
             // 
+            // titleLabel
+            // 
+            this.titleLabel.BackColor = System.Drawing.Color.White;
+            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Location = new System.Drawing.Point(100, 0);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(3);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(1032, 36);
+            this.titleLabel.TabIndex = 3;
+            this.titleLabel.Text = "محطة الكهرباء";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1132, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // دليلالمشتركينToolStripMenuItem
             // 
             this.دليلالمشتركينToolStripMenuItem.Name = "دليلالمشتركينToolStripMenuItem";
@@ -155,18 +191,23 @@
             // 
             // SystemConfig_MenuItem
             // 
+            this.SystemConfig_MenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SystemConfig_MenuItem.AutoSize = false;
             this.SystemConfig_MenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Collectors_MenuItem,
             this.CentralMeter_MenuItem,
             this.Regions_MenuItem,
             this.Blocks_MenuItem,
-            this.SubscriptionFees_MenuItem,
+            this.SubscriptionTypes_MenuItem,
             this.Contracts_MenuItem,
             this.Services_MenuItem,
             this.Fines_MenuItem});
             this.SystemConfig_MenuItem.Name = "SystemConfig_MenuItem";
-            this.SystemConfig_MenuItem.Size = new System.Drawing.Size(132, 22);
+            this.SystemConfig_MenuItem.Overflow = System.Windows.Forms.ToolStripItemOverflow.Always;
+            this.SystemConfig_MenuItem.Padding = new System.Windows.Forms.Padding(0);
+            this.SystemConfig_MenuItem.Size = new System.Drawing.Size(152, 20);
             this.SystemConfig_MenuItem.Text = "تهيئة النظام";
+            this.SystemConfig_MenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
             // Regions_MenuItem
             // 
@@ -175,12 +216,12 @@
             this.Regions_MenuItem.Text = "دليل المناطق";
             this.Regions_MenuItem.Click += new System.EventHandler(this.Regions_MenuItem_Click);
             // 
-            // SubscriptionFees_MenuItem
+            // SubscriptionTypes_MenuItem
             // 
-            this.SubscriptionFees_MenuItem.Name = "SubscriptionFees_MenuItem";
-            this.SubscriptionFees_MenuItem.Size = new System.Drawing.Size(185, 22);
-            this.SubscriptionFees_MenuItem.Text = "دليل انواع الاشتراكات";
-            this.SubscriptionFees_MenuItem.Click += new System.EventHandler(this.SubscriptionFees_MenuItem_Click);
+            this.SubscriptionTypes_MenuItem.Name = "SubscriptionTypes_MenuItem";
+            this.SubscriptionTypes_MenuItem.Size = new System.Drawing.Size(185, 22);
+            this.SubscriptionTypes_MenuItem.Text = "دليل انواع الاشتراكات";
+            this.SubscriptionTypes_MenuItem.Click += new System.EventHandler(this.SubscriptionTypes_MenuItem_Click);
             // 
             // EnergySystemMenuItem
             // 
@@ -204,42 +245,6 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // titleLabel
-            // 
-            this.titleLabel.BackColor = System.Drawing.Color.White;
-            this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(100, 0);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(3);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(1032, 36);
-            this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "محطة الكهرباء";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1132, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,10 +261,10 @@
             this.masterPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,7 +283,7 @@
         private System.Windows.Forms.ToolStripMenuItem CentralMeter_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem Collectors_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem SystemConfig_MenuItem;
-        private System.Windows.Forms.ToolStripMenuItem SubscriptionFees_MenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SubscriptionTypes_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem EnergySystemMenuItem;
         public System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem Regions_MenuItem;

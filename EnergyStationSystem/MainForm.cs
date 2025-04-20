@@ -37,11 +37,12 @@ namespace EnergyStationSystem
         {
             //OpenChildForm(new Regions());
             //OpenChildForm(new Collectors());
-            OpenChildForm(new SubscriptionTypes());
             //OpenChildForm(new SubscriptionTypes());
-            //OpenChildForm(new SubscriptionTypes());
-            //OpenChildForm(new SubscriptionTypes());
-            //OpenChildForm(new SubscriptionTypes());
+            //OpenChildForm(new Blocks());
+            //OpenChildForm(new CentralMeters());
+            //OpenChildForm(new Contracts());
+            //OpenChildForm(new Services());
+            OpenChildForm(new Fines());
 
             //OpenChildForm(new TestForm());
         }
@@ -66,10 +67,6 @@ namespace EnergyStationSystem
             OpenChildForm(new CentralMeters());
         }
 
-        private void SubscriptionFees_MenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void Contracts_MenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Contracts());
@@ -83,6 +80,11 @@ namespace EnergyStationSystem
         private void Fines_MenuItem_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Fines());
+        }
+
+        private void SubscriptionTypes_MenuItem_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new SubscriptionTypes());
         }
 
        

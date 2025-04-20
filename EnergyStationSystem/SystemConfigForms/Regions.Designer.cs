@@ -33,7 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCentralMeter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBlocksCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBlocksCount = new System.Windows.Forms.TextBox();
+            this.cmbCentralMeter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,13 +57,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.editBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbCentralMeter = new System.Windows.Forms.ComboBox();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCentralMeter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,6 +85,7 @@
             this.colID,
             this.colName,
             this.colCentralMeter,
+            this.colBlocksCount,
             this.colNote,
             this.colDate});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -105,13 +109,59 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(868, 202);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // colID
+            // 
+            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colID.DataPropertyName = "id";
+            this.colID.HeaderText = "رقم المنطقة";
+            this.colID.Name = "colID";
+            this.colID.Width = 95;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "name";
+            this.colName.HeaderText = "اسم المنطقة";
+            this.colName.Name = "colName";
+            this.colName.Width = 97;
+            // 
+            // colCentralMeter
+            // 
+            this.colCentralMeter.DataPropertyName = "central_meter";
+            this.colCentralMeter.HeaderText = "العداد المركزي";
+            this.colCentralMeter.Name = "colCentralMeter";
+            this.colCentralMeter.Width = 111;
+            // 
+            // colBlocksCount
+            // 
+            this.colBlocksCount.DataPropertyName = "blocks";
+            this.colBlocksCount.HeaderText = "عدد المربعات";
+            this.colBlocksCount.Name = "colBlocksCount";
+            this.colBlocksCount.Width = 103;
+            // 
+            // colNote
+            // 
+            this.colNote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNote.DataPropertyName = "note";
+            this.colNote.HeaderText = "ملاحظات";
+            this.colNote.Name = "colNote";
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "date";
+            this.colDate.HeaderText = "تاريخ الإدخال";
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 102;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtBlocksCount);
             this.groupBox1.Controls.Add(this.cmbCentralMeter);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
@@ -126,6 +176,49 @@
             this.groupBox1.Size = new System.Drawing.Size(858, 148);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(65, 17);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "رقم المنطقة";
+            this.label6.Visible = false;
+            // 
+            // txtBlocksCount
+            // 
+            this.txtBlocksCount.Enabled = false;
+            this.txtBlocksCount.Location = new System.Drawing.Point(6, 36);
+            this.txtBlocksCount.Name = "txtBlocksCount";
+            this.txtBlocksCount.Size = new System.Drawing.Size(100, 20);
+            this.txtBlocksCount.TabIndex = 12;
+            this.txtBlocksCount.Visible = false;
+            // 
+            // cmbCentralMeter
+            // 
+            this.cmbCentralMeter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbCentralMeter.BackColor = System.Drawing.Color.PowderBlue;
+            this.cmbCentralMeter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbCentralMeter.FormattingEnabled = true;
+            this.cmbCentralMeter.Location = new System.Drawing.Point(555, 79);
+            this.cmbCentralMeter.Name = "cmbCentralMeter";
+            this.cmbCentralMeter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbCentralMeter.Size = new System.Drawing.Size(217, 21);
+            this.cmbCentralMeter.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(778, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "العداد المركزي";
             // 
             // label5
             // 
@@ -181,7 +274,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(217, 26);
             this.txtName.TabIndex = 1;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtNumber
             // 
@@ -308,65 +400,6 @@
             this.panel1.Size = new System.Drawing.Size(868, 224);
             this.panel1.TabIndex = 12;
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(778, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 17);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "العداد المركزي";
-            // 
-            // cmbCentralMeter
-            // 
-            this.cmbCentralMeter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbCentralMeter.BackColor = System.Drawing.Color.PowderBlue;
-            this.cmbCentralMeter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmbCentralMeter.FormattingEnabled = true;
-            this.cmbCentralMeter.Location = new System.Drawing.Point(555, 79);
-            this.cmbCentralMeter.Name = "cmbCentralMeter";
-            this.cmbCentralMeter.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbCentralMeter.Size = new System.Drawing.Size(217, 21);
-            this.cmbCentralMeter.TabIndex = 11;
-            // 
-            // colID
-            // 
-            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colID.DataPropertyName = "id";
-            this.colID.HeaderText = "رقم المنطقة";
-            this.colID.Name = "colID";
-            this.colID.Width = 95;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "name";
-            this.colName.HeaderText = "اسم المنطقة";
-            this.colName.Name = "colName";
-            this.colName.Width = 97;
-            // 
-            // colCentralMeter
-            // 
-            this.colCentralMeter.DataPropertyName = "central_meter";
-            this.colCentralMeter.HeaderText = "العداد المركزي";
-            this.colCentralMeter.Name = "colCentralMeter";
-            this.colCentralMeter.Width = 111;
-            // 
-            // colNote
-            // 
-            this.colNote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNote.DataPropertyName = "note";
-            this.colNote.HeaderText = "ملاحظات";
-            this.colNote.Name = "colNote";
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "date";
-            this.colDate.HeaderText = "تاريخ الإدخال";
-            this.colDate.Name = "colDate";
-            this.colDate.Width = 102;
-            // 
             // Regions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,9 +438,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cmbCentralMeter;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBlocksCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCentralMeter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBlocksCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNote;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
     }
