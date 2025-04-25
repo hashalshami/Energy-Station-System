@@ -1,0 +1,79 @@
+<mxfile host="65bd71144e">
+    <diagram id="K6lufWs5j01x5gy4p-vn" name="Page-1">
+        <mxGraphModel dx="832" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="3" target="5">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="706" y="585" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="5" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="509" y="575" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="334" y="585" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="الخدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="334" y="360" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="10" target="7">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="10" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="طلب الخدمة" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="324" y="460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="غرامة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="5" y="585" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="334" y="799" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="15" target="12">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="15" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="يملك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="324" y="680" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="نوع العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="706" y="360" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="19" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="19" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="يحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="696" y="460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="22" target="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" edge="1" parent="1" source="22" target="11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="غرامة المشترك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="164" y="575" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
