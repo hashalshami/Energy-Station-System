@@ -1,0 +1,958 @@
+<mxfile host="65bd71144e">
+    <diagram id="8X1Tj9C4ji4QIpv6Q2mm" name="Master">
+        <mxGraphModel dx="1659" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="32" target="02xqmGFyLeKgKhswmcbi-4" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="770" y="610" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-3" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-4" target="02xqmGFyLeKgKhswmcbi-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-4" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1;strokeColor=#10739e;verticalAlign=middle;fontColor=default;fillColor=#b1ddf0;" parent="1" vertex="1">
+                    <mxGeometry x="561" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-5" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;fontSize=14;fontStyle=1;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="600" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="25" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="378" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-8" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=ERmany;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="02xqmGFyLeKgKhswmcbi-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="530" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.013;entryY=0.75;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.975;entryY=0.775;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-9" value="طلب الخدمة" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1;fillColor=#b1ddf0;strokeColor=#10739e;" parent="1" vertex="1">
+                    <mxGeometry x="319" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-11" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="328" y="814" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="02xqmGFyLeKgKhswmcbi-14" target="02xqmGFyLeKgKhswmcbi-11" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-13" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-14" target="02xqmGFyLeKgKhswmcbi-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-14" value="يملك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="318" y="695" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-16" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-18" target="33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="750" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-17" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-18" target="32" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="590" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-18" value="يحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1;strokeColor=#10739e;verticalAlign=middle;fontColor=default;fillColor=#b1ddf0;" parent="1" vertex="1">
+                    <mxGeometry x="799" y="430" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-19" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-21" target="02xqmGFyLeKgKhswmcbi-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-20" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="02xqmGFyLeKgKhswmcbi-21" target="31" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="40" y="620" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="02xqmGFyLeKgKhswmcbi-21" value="غرامة المشترك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1;strokeColor=#10739e;verticalAlign=middle;fontColor=default;fillColor=#b1ddf0;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="tuYO_XVNNG2uaHxvVZDC-2" target="tuYO_XVNNG2uaHxvVZDC-5" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-2" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="384" y="1338" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-3" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="-26" y="1338" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="tuYO_XVNNG2uaHxvVZDC-5" target="tuYO_XVNNG2uaHxvVZDC-3" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-5" value="يتبع" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="174" y="1328" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-6" value="حالة عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="-1" y="692" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-8" style="edgeStyle=elbowEdgeStyle;html=1;endArrow=ERoneToMany;endFill=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;elbow=vertical;exitX=1;exitY=0.5;exitDx=0;exitDy=0;rounded=0;curved=0;" parent="1" source="tuYO_XVNNG2uaHxvVZDC-9" target="02xqmGFyLeKgKhswmcbi-11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="314" y="775" as="sourcePoint"/>
+                        <mxPoint x="214" y="885" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="324" y="775"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-8" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="tuYO_XVNNG2uaHxvVZDC-9" target="tuYO_XVNNG2uaHxvVZDC-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-9" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="158" y="682" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="434" y="1623" as="sourcePoint"/>
+                        <mxPoint x="434" y="1538" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-12" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" target="tuYO_XVNNG2uaHxvVZDC-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="434" y="1478" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="tuYO_XVNNG2uaHxvVZDC-15" target="tuYO_XVNNG2uaHxvVZDC-17" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-15" value="نوع الاشتراك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="814" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-9" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="tuYO_XVNNG2uaHxvVZDC-17" target="02xqmGFyLeKgKhswmcbi-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-17" value="يعرف" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="524" y="804" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="808" y="1343" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="tuYO_XVNNG2uaHxvVZDC-23" target="tuYO_XVNNG2uaHxvVZDC-25" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-23" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="794" y="1208" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-24" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="tuYO_XVNNG2uaHxvVZDC-25" target="tuYO_XVNNG2uaHxvVZDC-2" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="484" y="1228" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="tuYO_XVNNG2uaHxvVZDC-25" value="ترتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="584" y="1198" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-2" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="681" y="1028" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-4" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;" parent="1" source="eJI_n3FtHA6jJYslsOEY-3" target="02xqmGFyLeKgKhswmcbi-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-7" style="edgeStyle=none;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;" parent="1" source="eJI_n3FtHA6jJYslsOEY-3" target="eJI_n3FtHA6jJYslsOEY-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-3" value="تسجل" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="455" y="746" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="eJI_n3FtHA6jJYslsOEY-5" value="قراءات العداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="699" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="رقم الخدمة" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="390" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="رقم المشترك" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="492" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.05;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="اسم طالب الخدمة" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;dashed=1;" vertex="1" parent="1">
+                    <mxGeometry x="495" y="440" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="الخدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;fontSize=14;fontStyle=1;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="280" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="حالة الطلب" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="238" y="390" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="تاريخ الطلب" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="490" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" style="edgeStyle=none;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.95;entryY=0.275;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="02xqmGFyLeKgKhswmcbi-9" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="الغرامة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;fontSize=14;fontStyle=1;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="600" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;fontSize=14;fontStyle=1;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="600" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="نوع العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Times New Roman;fontSize=14;fontStyle=1;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="800" y="280" width="119" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="K_uf6fOGzTzqSGmr0w_y" name="ttt">
+        <mxGraphModel dx="832" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-96" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-97" target="bDvmcR7YUBtscFP_s0Hi-100" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-97" value="محصل" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="50" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-98" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="50" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-99" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-100" target="bDvmcR7YUBtscFP_s0Hi-98" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-100" value="يعمل في" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-101" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-102" target="bDvmcR7YUBtscFP_s0Hi-105" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-102" value="منطقة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="140" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-103" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="140" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-104" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-105" target="bDvmcR7YUBtscFP_s0Hi-103" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-105" value="تحتوي" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="130" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-106" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-107" target="bDvmcR7YUBtscFP_s0Hi-110" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-107" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="230" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-108" value="منطقة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="230" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-109" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-110" target="bDvmcR7YUBtscFP_s0Hi-108" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-110" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="220" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-111" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-112" target="bDvmcR7YUBtscFP_s0Hi-115" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-112" value="سجلات العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="320" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-113" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="320" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-114" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-115" target="bDvmcR7YUBtscFP_s0Hi-113" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-115" value="تسجل" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="310" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-116" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-117" target="bDvmcR7YUBtscFP_s0Hi-120" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-117" value="نوع العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="400" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-118" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="400" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-119" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-120" target="bDvmcR7YUBtscFP_s0Hi-118" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-120" value="يحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-121" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-122" target="bDvmcR7YUBtscFP_s0Hi-125" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-122" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="490" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-123" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="490" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-124" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-125" target="bDvmcR7YUBtscFP_s0Hi-123" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-125" value="يتبع" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-126" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-127" target="bDvmcR7YUBtscFP_s0Hi-130" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-127" value="حالة عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="580" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-128" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="580" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-129" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-130" target="bDvmcR7YUBtscFP_s0Hi-128" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-130" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="570" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-131" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-132" target="bDvmcR7YUBtscFP_s0Hi-135" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-132" value="قراءات العداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="660" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-133" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="660" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-134" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-135" target="bDvmcR7YUBtscFP_s0Hi-133" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-135" value="تسجل" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="650" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-136" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-137" target="bDvmcR7YUBtscFP_s0Hi-140" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-137" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="760" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-138" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="760" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-139" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-140" target="bDvmcR7YUBtscFP_s0Hi-138" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-140" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="750" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-141" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-142" target="bDvmcR7YUBtscFP_s0Hi-145" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-142" value="نوع الاشتراك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="850" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-143" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="850" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-144" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-145" target="bDvmcR7YUBtscFP_s0Hi-143" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-145" value="يعرف" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-146" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-147" target="bDvmcR7YUBtscFP_s0Hi-150" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-147" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="927" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-148" value="طلب خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="927" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-149" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-150" target="bDvmcR7YUBtscFP_s0Hi-148" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-150" value="يطلب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="917" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-151" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-152" target="bDvmcR7YUBtscFP_s0Hi-155" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-152" value="خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1020" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-153" value="طلب خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1020" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-154" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-155" target="bDvmcR7YUBtscFP_s0Hi-153" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-155" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1010" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-156" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-157" target="bDvmcR7YUBtscFP_s0Hi-160" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-157" value="غرامة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1110" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-158" value="غرامة مشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1110" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-159" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-160" target="bDvmcR7YUBtscFP_s0Hi-158" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-160" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1100" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-161" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-162" target="bDvmcR7YUBtscFP_s0Hi-165" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-162" value="غرامة المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1179" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-163" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1179" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-164" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-165" target="bDvmcR7YUBtscFP_s0Hi-163" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-165" value="تخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1169" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-166" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-167" target="bDvmcR7YUBtscFP_s0Hi-170" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-167" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1270" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-168" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1270" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-169" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-170" target="bDvmcR7YUBtscFP_s0Hi-168" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-170" value="يملك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1260" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-171" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-172" target="bDvmcR7YUBtscFP_s0Hi-175" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-172" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1360" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-173" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1360" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-174" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-175" target="bDvmcR7YUBtscFP_s0Hi-173" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-175" value="ترتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-176" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-177" target="bDvmcR7YUBtscFP_s0Hi-180" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-177" value="المستحق" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1450" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-178" value="العداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1450" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-179" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-180" target="bDvmcR7YUBtscFP_s0Hi-178" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-180" value="تخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-181" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-182" target="bDvmcR7YUBtscFP_s0Hi-185" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-182" value="المدفوع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1530" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-183" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1530" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-184" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-185" target="bDvmcR7YUBtscFP_s0Hi-183" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-185" value="يخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1520" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-186" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="bDvmcR7YUBtscFP_s0Hi-187" target="bDvmcR7YUBtscFP_s0Hi-190" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-187" value="المتأخر" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="630" y="1610" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-188" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="1610" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-189" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="bDvmcR7YUBtscFP_s0Hi-190" target="bDvmcR7YUBtscFP_s0Hi-188" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="bDvmcR7YUBtscFP_s0Hi-190" value="يخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="420" y="1600" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="zvDMe6uiQRBrO1K41_BM" name="Page-3">
+        <mxGraphModel dx="832" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-2" target="7A-eNNAHnKx6N4mhCi5f-5">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-2" value="محصل" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-3" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="60" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-5" target="7A-eNNAHnKx6N4mhCi5f-3">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-5" value="يعمل في" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="50" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-7" target="7A-eNNAHnKx6N4mhCi5f-10">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-7" value="منطقة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="150" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-8" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="150" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-10" target="7A-eNNAHnKx6N4mhCi5f-8">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-10" value="تحتوي" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-12" target="7A-eNNAHnKx6N4mhCi5f-15">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-12" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="240" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-13" value="منطقة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="240" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-15" target="7A-eNNAHnKx6N4mhCi5f-13">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-15" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="230" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-17" target="7A-eNNAHnKx6N4mhCi5f-20">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-17" value="سجلات العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="330" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-18" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="330" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-20" target="7A-eNNAHnKx6N4mhCi5f-18">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-20" value="تسجل" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-22" target="7A-eNNAHnKx6N4mhCi5f-25">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-22" value="نوع العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="410" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-23" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="410" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-25" target="7A-eNNAHnKx6N4mhCi5f-23">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-25" value="يحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="400" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-27" target="7A-eNNAHnKx6N4mhCi5f-30">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-27" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="500" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-28" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="500" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-30" target="7A-eNNAHnKx6N4mhCi5f-28">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-30" value="يتبع" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-32" target="7A-eNNAHnKx6N4mhCi5f-35">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-32" value="حالة عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="590" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-33" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="590" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-35" target="7A-eNNAHnKx6N4mhCi5f-33">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-35" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="580" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-37" target="7A-eNNAHnKx6N4mhCi5f-40">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-37" value="قراءات العداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="670" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-38" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="670" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-40" target="7A-eNNAHnKx6N4mhCi5f-38">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-40" value="تسجل" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="660" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-41" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-42" target="7A-eNNAHnKx6N4mhCi5f-45">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-42" value="نموذج العقد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="770" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-43" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="770" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-44" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-45" target="7A-eNNAHnKx6N4mhCi5f-43">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-45" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="760" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-46" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-47" target="7A-eNNAHnKx6N4mhCi5f-50">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-47" value="نوع الاشتراك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="860" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-48" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="860" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-50" target="7A-eNNAHnKx6N4mhCi5f-48">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-50" value="يعرف" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="850" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-52" target="7A-eNNAHnKx6N4mhCi5f-55">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-52" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="937" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-53" value="طلب خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="937" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-55" target="7A-eNNAHnKx6N4mhCi5f-53">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-55" value="يطلب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="927" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-56" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-57" target="7A-eNNAHnKx6N4mhCi5f-60">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-57" value="خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1030" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-58" value="طلب خدمة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1030" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-60" target="7A-eNNAHnKx6N4mhCi5f-58">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-60" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1020" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-61" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-62" target="7A-eNNAHnKx6N4mhCi5f-65">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-62" value="غرامة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1120" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-63" value="غرامة مشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1120" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-64" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-65" target="7A-eNNAHnKx6N4mhCi5f-63">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-65" value="تحدد" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1110" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-66" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-67" target="7A-eNNAHnKx6N4mhCi5f-70">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-67" value="غرامة المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1189" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-68" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1189" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-69" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-70" target="7A-eNNAHnKx6N4mhCi5f-68">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-70" value="تخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1179" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-72" target="7A-eNNAHnKx6N4mhCi5f-75">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-72" value="المشترك" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1280" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-73" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1280" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-74" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-75" target="7A-eNNAHnKx6N4mhCi5f-73">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-75" value="يملك" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1270" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-76" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-77" target="7A-eNNAHnKx6N4mhCi5f-80">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-77" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1370" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-78" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1370" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-79" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-80" target="7A-eNNAHnKx6N4mhCi5f-78">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-80" value="ترتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-81" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-82" target="7A-eNNAHnKx6N4mhCi5f-85">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-82" value="المستحق" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1460" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-83" value="العداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1460" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-84" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-85" target="7A-eNNAHnKx6N4mhCi5f-83">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-85" value="تخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1450" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-87" target="7A-eNNAHnKx6N4mhCi5f-90">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-87" value="المدفوع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1540" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-88" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1540" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-90" target="7A-eNNAHnKx6N4mhCi5f-88">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-90" value="يخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1530" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-91" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-92" target="7A-eNNAHnKx6N4mhCi5f-95">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-92" value="المتأخر" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="640" y="1620" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-93" value="الفاتورة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="1620" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-94" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" edge="1" parent="1" source="7A-eNNAHnKx6N4mhCi5f-95" target="7A-eNNAHnKx6N4mhCi5f-93">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7A-eNNAHnKx6N4mhCi5f-95" value="يخص" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="430" y="1610" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

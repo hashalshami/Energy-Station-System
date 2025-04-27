@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e">
+    <diagram id="DL4PMsXjGCB9Vufn2Y-B" name="Page-1">
+        <mxGraphModel dx="1189" dy="1786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="3" target="6" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="محصل" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="106" y="-604" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="6" target="9" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="-204" y="-584" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="يعمل في" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="96" y="-480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="8" target="11" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="منطقة" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="516" y="-340" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="106" y="-340" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERoneToMany;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="11" target="9" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="تحتوي" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="306" y="-350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERone;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="13" target="16" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="العداد المركزي" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="516" y="-604" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="16" target="8" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="206" y="-584" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="يرتبط ب" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="506" y="-480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;startFill=0;startArrow=ERoneToMany;fontSize=14;spacingBottom=0;spacingLeft=20;fontStyle=1" parent="1" source="28" target="31" edge="1">
+                    <mxGeometry x="-0.3333" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="عداد" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="516" y="-130" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="مربع" style="whiteSpace=wrap;html=1;align=center;fontFamily=Readex Pro;fontSize=12;fontStyle=0;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DReadex%2BPro;gradientDirection=south;shadow=0;glass=0;rounded=0;fillColor=#003CB3;strokeColor=#001DBC;verticalAlign=middle;fontColor=#ffffff;gradientColor=#00256E;" parent="1" vertex="1">
+                    <mxGeometry x="106" y="-130" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERone;endFill=0;fontStyle=1;fontSize=14;spacingRight=20;" parent="1" source="31" target="29" edge="1">
+                    <mxGeometry x="0.4" y="-10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="31" value="يتبع" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;fontSize=14;fontFamily=Times New Roman;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="306" y="-140" width="120" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
