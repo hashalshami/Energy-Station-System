@@ -319,5 +319,10 @@ namespace EnergyStationSystem.SystemConfigForms
         {
 
         }
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+            //SearchName(txtName.Text);
+        }
     }
 }

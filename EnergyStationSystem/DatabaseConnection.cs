@@ -10,7 +10,7 @@ namespace EnergyStationSystem
 {
     class DatabaseConnection
     {
-        public string connectionString = "Data Source=HASH;Initial Catalog=EnergyStation_Database;Integrated Security=True";
+        public string connectionString = @"Data Source=HASH;Initial Catalog=EnergyStation_Database;Integrated Security=True";
         //public string ReseedID = "DBCC CHECKIDENT ('Table', RESEED, 0)";
 
         // دالة تقوم بتحويل قيمة نصية إلى رقم صحيح (int)
