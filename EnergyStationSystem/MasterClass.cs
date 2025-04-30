@@ -29,43 +29,7 @@ namespace EnergyStationSystem
             }
         }
 
-        //لتلوين الازرار - لم يتم استخدامها
-        public static void ApplyButtonStyle(Button button)
-        {
-            button.FlatStyle = FlatStyle.Flat; 
-            button.FlatAppearance.BorderSize = 0;
-            button.ForeColor = Color.White;
-            button.Font = new Font("Tahoma", 12, FontStyle.Bold); 
-
-            switch (button.Name)
-            {
-                case "addBtn":
-                    button.BackColor = Color.Green;
-                    break;
-                case "editBtn":
-                    button.BackColor = Color.DodgerBlue;
-                    break;
-                case "deleteBtn":
-                    button.BackColor = Color.Red;
-                    break;
-                case "searchBtn":
-                    button.BackColor = Color.Teal;
-                    break;
-                case "updateBtn":
-                    button.BackColor = Color.LightBlue;
-                    break;
-                case "printBtn":
-                    button.BackColor = Color.White;
-                    button.ForeColor = Color.Black; 
-                    break;
-                default:
-                    button.BackColor = Color.Gray;
-                    break;
-            }
-        }
-
-
-
+       
 
 
 
