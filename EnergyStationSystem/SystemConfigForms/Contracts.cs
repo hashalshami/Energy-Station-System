@@ -247,6 +247,11 @@ namespace EnergyStationSystem.SystemConfigForms
             LoadData();
         }
 
+        private void txtTerms_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         
 
         

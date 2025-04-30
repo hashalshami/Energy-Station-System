@@ -98,13 +98,12 @@ namespace EnergyStationSystem.SystemConfigForms
         public Regions()
         {
             InitializeComponent();
+            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
         }
 
         private void RegionsForm_Load(object sender, EventArgs e)
         {
-            dataGridView1.RowPrePaint += MasterClass.ApplyRowStyle;
             LoadData();
-            ClearFields();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -299,7 +298,7 @@ namespace EnergyStationSystem.SystemConfigForms
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
-            
+            //SearchName(t);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -318,6 +317,11 @@ namespace EnergyStationSystem.SystemConfigForms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtName_TextChanged_1(object sender, EventArgs e)
+        {
+            //SearchName(txtName.Text);
         }
     }
 }
