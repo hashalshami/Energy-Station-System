@@ -10,6 +10,7 @@ using System.Windows.Forms;
 // مجلدات الواجهات
 using EnergyStationSystem.SystemConfigForms;
 using EnergyStationSystem.ProcessForms;
+using ComponentFactory.Krypton.Toolkit;
 
 namespace EnergyStationSystem
 {
@@ -37,7 +38,7 @@ namespace EnergyStationSystem
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new Regions());
+            //OpenChildForm(new Regions());
             //OpenChildForm(new Collectors());
             //OpenChildForm(new SubscriptionTypes());
             //OpenChildForm(new Blocks());
@@ -46,7 +47,7 @@ namespace EnergyStationSystem
             //OpenChildForm(new Services());
             //OpenChildForm(new Fines());
 
-            //OpenChildForm(new TestForm());
+            OpenChildForm(new Subscribers());
         }
 
         private void Collectors_MenuItem_Click(object sender, EventArgs e)

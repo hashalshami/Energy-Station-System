@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.masterPanel = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
@@ -48,6 +49,7 @@
             this.SubscriptionTypes_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnergySystemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.masterPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -234,6 +236,7 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EnergySystemMenuItem,
@@ -244,6 +247,11 @@
             this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // kryptonPalette1
+            // 
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.White;
             // 
             // MainForm
             // 
@@ -291,5 +299,6 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
     }
 }
