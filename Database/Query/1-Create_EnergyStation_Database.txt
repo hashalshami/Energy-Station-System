@@ -1,0 +1,442 @@
+CREATE TABLE [Collectors] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL,
+	[address] NVARCHAR(70) NOT NULL,
+	[phone] INTEGER NOT NULL UNIQUE CHECK((len([phone])=(9))),
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Collectors_index_0]
+ON [Collectors] ([id]);
+GO
+
+CREATE TABLE [CentralMeters] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL UNIQUE,
+	[limit] INTEGER DEFAULT 0,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [CentralMeters_index_0]
+ON [CentralMeters] ([id], [name]);
+GO
+
+CREATE TABLE [CentralMeterLogs] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[central_meter_id] INTEGER NOT NULL,
+	[last_read] INTEGER NOT NULL,
+	[new_read] INTEGER NOT NULL,
+	[from] DATE,
+	[to] DATE,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [CentralMeterLogs_index_0]
+ON [CentralMeterLogs] ([id]);
+GO
+
+CREATE TABLE [Regions] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL UNIQUE,
+	[central_meter_id] INTEGER,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Regions_index_0]
+ON [Regions] ([id], [name]);
+GO
+
+CREATE TABLE [Blocks] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL,
+	[collector_id] INTEGER,
+	[region_id] INTEGER NOT NULL,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Blocks_index_0]
+ON [Blocks] ([id], [region_id]);
+GO
+
+CREATE TABLE [SubscriptionTypes] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL,
+	[unit_price] INTEGER NOT NULL,
+	[service_fees] INTEGER NOT NULL,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [SubscriptionTypes_index_0]
+ON [SubscriptionTypes] ([id], [service_fees], [unit_price]);
+GO
+
+CREATE TABLE [ContractTypes] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL UNIQUE,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [ContractTypes_index_0]
+ON [ContractTypes] ([id]);
+GO
+
+CREATE TABLE [Contracts] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL,
+	[type_id] INTEGER NOT NULL DEFAULT 1,
+	[terms] NVARCHAR(MAX) NOT NULL,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Contracts_index_0]
+ON [Contracts] ([id], [name]);
+GO
+
+CREATE TABLE [Subscriber] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL,
+	[phone] INTEGER NOT NULL UNIQUE CHECK((len([phone])=(9))),
+	[address] NVARCHAR(70) NOT NULL,
+	[date] DATETIME NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Subscriber_index_0]
+ON [Subscriber] ([id]);
+GO
+
+CREATE TABLE [Services] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL UNIQUE,
+	[price] INTEGER NOT NULL,
+	[status] BIT NOT NULL DEFAULT 0,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Services_index_0]
+ON [Services] ([id], [price], [status]);
+GO
+
+CREATE TABLE [FineTypes] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL UNIQUE,
+	[price] INTEGER NOT NULL,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [FineTypes_index_0]
+ON [FineTypes] ([id], [price]);
+GO
+
+CREATE TABLE [ServiceRequests] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[service_id] INTEGER NOT NULL,
+	[subscriber_id] INTEGER,
+	[applicant_name] NVARCHAR(150),
+	[status] BIT NOT NULL DEFAULT 0,
+	[note] NVARCHAR(MAX),
+	[date] DATETIME NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [ServiceRequests_index_0]
+ON [ServiceRequests] ([id], [service_id], [status]);
+GO
+
+CREATE TABLE [Fines] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[fine_type_id] INTEGER NOT NULL,
+	[meter_id] INTEGER NOT NULL,
+	[status] BIT NOT NULL DEFAULT 0,
+	[note] NVARCHAR(MAX),
+	[date] DATETIME NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Fines_index_0]
+ON [Fines] ([id], [status], [fine_type_id], [meter_id]);
+GO
+
+CREATE TABLE [MeterStatus] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL UNIQUE,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [MeterStatus_index_0]
+ON [MeterStatus] ([id]);
+GO
+
+CREATE TABLE [Meters] (
+	[id] INTEGER NOT NULL UNIQUE,
+	[subscriber_id] INTEGER NOT NULL,
+	[status_id] INTEGER NOT NULL,
+	[block_id] INTEGER NOT NULL,
+	[subscription_type_id] INTEGER NOT NULL,
+	[contract_id] INTEGER NOT NULL,
+	[note] NVARCHAR(MAX),
+	[date] DATETIME NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Meters_index_0]
+ON [Meters] ([id], [subscriber_id], [status_id], [subscription_type_id]);
+GO
+
+CREATE TABLE [Readings] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[meter_id] INTEGER NOT NULL,
+	[last_read] INTEGER NOT NULL,
+	[new_read] INTEGER NOT NULL,
+	[consumed] AS (new_read - last_read) PERSISTED,
+	[date] DATETIME NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Readings_index_0]
+ON [Readings] ([id], [meter_id], [last_read], [new_read], [consumed]);
+GO
+
+CREATE TABLE [Invoices] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[meter_id] INTEGER NOT NULL,
+	[reading_id] INTEGER NOT NULL,
+	[unit_price] INTEGER NOT NULL,
+	[service_fees] INTEGER NOT NULL,
+	[cost] INTEGER NOT NULL,
+	[arrear] INTEGER NOT NULL,
+	[total] INTEGER NOT NULL,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Invoices_index_0]
+ON [Invoices] ([id], [meter_id], [reading_id], [service_fees], [unit_price], [cost]);
+GO
+
+CREATE TABLE [Payments] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[invoice_id] INTEGER NOT NULL,
+	[paid] INTEGER NOT NULL,
+	[arrear] INTEGER NOT NULL DEFAULT 0,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Payments_index_0]
+ON [Payments] ([id], [invoice_id]);
+GO
+
+CREATE TABLE [AccountTypes] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL UNIQUE,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [AccountTypes_index_0]
+ON [AccountTypes] ([id]);
+GO
+
+CREATE TABLE [Coins] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(70) NOT NULL,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Coins_index_0]
+ON [Coins] ([id]);
+GO
+
+CREATE TABLE [Accounts] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[meter_id] INTEGER NOT NULL,
+	[name] NVARCHAR(100),
+	[account_type_id] INTEGER NOT NULL,
+	[coin_id] INTEGER NOT NULL DEFAULT 1,
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Accounts_index_0]
+ON [Accounts] ([id], [meter_id]);
+GO
+
+CREATE TABLE [AccountDetails] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[account_id] INTEGER NOT NULL,
+	[debtor] INTEGER NOT NULL,
+	[creditor] INTEGER NOT NULL,
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [AccountDetails_index_0]
+ON [AccountDetails] ([id], [account_id], [debtor], [creditor]);
+GO
+
+CREATE TABLE [Admins] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[name] NVARCHAR(100) NOT NULL,
+	[phone] INTEGER NOT NULL UNIQUE CHECK((len([phone])=(9))),
+	[note] NVARCHAR(MAX),
+	[date] DATE NOT NULL DEFAULT GETDATE(),
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Admins_index_0]
+ON [Admins] ([id]);
+GO
+
+CREATE TABLE [Roles] (
+	[id] INTEGER NOT NULL IDENTITY UNIQUE,
+	[admin_id] INTEGER NOT NULL,
+	[R1] BIT NOT NULL DEFAULT 0,
+	[R2] BIT NOT NULL DEFAULT 0,
+	[R3] BIT NOT NULL DEFAULT 0,
+	[R4] BIT NOT NULL DEFAULT 0,
+	PRIMARY KEY([id])
+);
+GO
+
+CREATE INDEX [Roles_index_0]
+ON [Roles] ([id], [admin_id]);
+GO
+
+ALTER TABLE [CentralMeterLogs]
+ADD FOREIGN KEY([central_meter_id]) REFERENCES [CentralMeters]([id])
+ON UPDATE NO ACTION ON DELETE CASCADE;
+GO
+ALTER TABLE [Regions]
+ADD FOREIGN KEY([central_meter_id]) REFERENCES [CentralMeters]([id])
+ON UPDATE NO ACTION ON DELETE SET NULL;
+GO
+ALTER TABLE [Blocks]
+ADD FOREIGN KEY([collector_id]) REFERENCES [Collectors]([id])
+ON UPDATE NO ACTION ON DELETE SET NULL;
+GO
+ALTER TABLE [Blocks]
+ADD FOREIGN KEY([region_id]) REFERENCES [Regions]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Contracts]
+ADD FOREIGN KEY([type_id]) REFERENCES [ContractTypes]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [ServiceRequests]
+ADD FOREIGN KEY([service_id]) REFERENCES [Services]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [ServiceRequests]
+ADD FOREIGN KEY([subscriber_id]) REFERENCES [Subscriber]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Meters]
+ADD FOREIGN KEY([subscriber_id]) REFERENCES [Subscriber]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Meters]
+ADD FOREIGN KEY([status_id]) REFERENCES [MeterStatus]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Meters]
+ADD FOREIGN KEY([block_id]) REFERENCES [Blocks]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Meters]
+ADD FOREIGN KEY([subscription_type_id]) REFERENCES [SubscriptionTypes]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Meters]
+ADD FOREIGN KEY([contract_id]) REFERENCES [Contracts]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Readings]
+ADD FOREIGN KEY([meter_id]) REFERENCES [Meters]([id])
+ON UPDATE CASCADE ON DELETE CASCADE;
+GO
+ALTER TABLE [Invoices]
+ADD FOREIGN KEY([meter_id]) REFERENCES [Meters]([id])
+ON UPDATE CASCADE ON DELETE NO ACTION;
+GO
+ALTER TABLE [Payments]
+ADD FOREIGN KEY([invoice_id]) REFERENCES [Invoices]([id])
+ON UPDATE NO ACTION ON DELETE CASCADE;
+GO
+ALTER TABLE [Fines]
+ADD FOREIGN KEY([meter_id]) REFERENCES [Meters]([id])
+ON UPDATE CASCADE ON DELETE NO ACTION;
+GO
+ALTER TABLE [Fines]
+ADD FOREIGN KEY([fine_type_id]) REFERENCES [FineTypes]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Invoices]
+ADD FOREIGN KEY([reading_id]) REFERENCES [Readings]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Roles]
+ADD FOREIGN KEY([admin_id]) REFERENCES [Admins]([id])
+ON UPDATE NO ACTION ON DELETE CASCADE;
+GO
+ALTER TABLE [Accounts]
+ADD FOREIGN KEY([meter_id]) REFERENCES [Meters]([id])
+ON UPDATE CASCADE ON DELETE NO ACTION;
+GO
+ALTER TABLE [AccountDetails]
+ADD FOREIGN KEY([account_id]) REFERENCES [Accounts]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Accounts]
+ADD FOREIGN KEY([account_type_id]) REFERENCES [AccountTypes]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
+ALTER TABLE [Accounts]
+ADD FOREIGN KEY([coin_id]) REFERENCES [Coins]([id])
+ON UPDATE NO ACTION ON DELETE NO ACTION;
+GO
