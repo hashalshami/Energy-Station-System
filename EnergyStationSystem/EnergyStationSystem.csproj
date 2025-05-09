@@ -47,8 +47,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
@@ -125,6 +141,12 @@
     <Compile Include="SystemConfigForms\Services.Designer.cs">
       <DependentUpon>Services.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemConfigForms\Subscribers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemConfigForms\Subscribers.Designer.cs">
+      <DependentUpon>Subscribers.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemConfigForms\SubscriptionTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemConfigForms\Subscribers.resx">
+      <DependentUpon>Subscribers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemConfigForms\SubscriptionTypes.resx">
       <DependentUpon>SubscriptionTypes.cs</DependentUpon>
