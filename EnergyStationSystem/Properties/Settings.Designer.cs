@@ -25,10 +25,18 @@ namespace EnergyStationSystem.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>مستمر</string>\r\n  <string>مفصول</string>\r\n  <string>موقف</string>\r\n</Array" +
-            "OfString>")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string AutomaticSubscriptionAmount {
+            get {
+                return ((string)(this["AutomaticSubscriptionAmount"]));
+            }
+            set {
+                this["AutomaticSubscriptionAmount"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::System.Collections.Specialized.StringCollection MeterStatus {
             get {
                 return ((global::System.Collections.Specialized.StringCollection)(this["MeterStatus"]));
